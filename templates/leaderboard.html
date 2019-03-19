@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{%static "css/leaderboard.css"%}" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="{%static "css/loder.css"%}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <script src="jquery-1.10.2.min.js"></script>
+     <script src="full-screen-helper.js"></script> -->
+     <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+	 <!-- <link rel="stylesheet" href="loder.css"> -->
+	 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|ZCOOL+KuaiLe" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Acme|Baloo+Thambi|Permanent+Marker|ZCOOL+KuaiLe" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Quicksand|Varela+Round" rel="stylesheet"> -->
+   <!-- <link rel="stylesheet" href="loder.css"> -->
+   <link rel="stylesheet" href="{%static "fontawesome/css/all.css"%}">
+   <script src="{%static "js/jquery.min.js"%}"></script>
+</head>
+<body>
+    <div id="leaderboard" class="container"></div>
+    <div class="humble">
+            <div class="good">
+            <a href="#" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+            </div>
+            <div class="final">
+            <a href="#" class="open"  onclick="toggleFullScreen()"><i class="fas fa-arrows-alt"></i></a>
+            <a href="#" class="close" onclick="toggleFullScreen()"><i class="fas fa-compress-arrows-alt"></i></i></a>
+            </div>
+            </div>
+    <script>
+        function toggleFullScreen() {
+        if ((document.fullScreenElement && document.fullScreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+            if (document.documentElement.requestFullScreen) {
+                document.documentElement.requestFullScreen();
+
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+
+            } else if (document.documentElement.webkitRequestFullScreen) {
+                document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+
+            }
+        } else {
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+
+            }
+        }
+        }
+        window.addEventListener('resize', function(){
+             if(screen.width === window.innerWidth){
+                $('.final').toggleClass('active');
+                $('.close').toggleClass('active');
+  }
+});
+function goBack()
+{
+    window.history.back();
+}
+
+    </script>
+</body>
+<script src="{%static "js/leaderboard.js"%}"></script>
+</html>

@@ -1,0 +1,118 @@
+body{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden;
+		margin:0;
+		border:none;
+	}
+	.wraper{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden;
+		position: relative;
+	}
+	@keyframes spin1 {
+    	0% { transform: rotate(0deg); }
+    	50%{ transform: rotate(1800deg);}
+		70%{ transform: rotate(2160deg);}
+		100%{transform: rotate(2542.5deg);}
+    }
+    .second{
+    	animation: rotate 10s ease-in-out 1;
+    	animation-fill-mode: both; 
+    }
+    @keyframes rotate
+    {
+    	0% { transform: rotate(0deg); }
+    	100% { transform: rotate(1440deg); }
+    }
+	.button{
+		margin: 5vh;
+		height: 10vh;
+		width: 20vw;
+		background-color: black;
+		border-radius: 12px;
+		line-height: 10vh;
+		text-align: center;
+		font-size: 1.1vw;
+		color: white;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		z-index: 10;
+		cursor: pointer;
+	}
+	.question1, .question2, .question3, .question4{
+		position: absolute;
+		transform: scale(0);
+		top: 0;
+		left: 0;
+		z-index: 200;
+		transition: transform 1s ease-in-out;
+		border: none;
+		margin: 0;
+	}
+    .but1 {
+    	border-radius: 10%;
+    }
+    .but2 {
+    	border-radius: 10%;
+    }
+	#roulette{
+		/*background: url("Images/ROULLETE156.svg");*/
+		/*background-position: right;
+		background-size: cover;*/
+		/*transform-origin: center;*/
+		width: 85vh;
+		height: 80vh;
+		transition:5s cubic-bezier(0,.4,.4,1.025);
+	}
+	#roulette > img
+	{
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}	
+	#pointer{
+		background: url("Images/Pointer.svg");
+		width: 100px;
+		height: 140px;
+		background-size: cover;
+		position: relative;
+		top: -100%;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 100;
+		
+	}
+	.container{
+		height: 80vh;
+		width: 80vh;
+	}
+	@media all and (max-width: 600px){
+		#roulette{
+			height: 80vw;
+			width: 80vw;
+		}
+		#pointer{
+			height: 60px;
+			width: 45px;
+		}
+		.container{
+			height: 80vw;
+			width: 80vw;
+		}
+		.button{
+			width: 80vw;
+			height: 20vw;
+			font-size: 4vw;
+		}
+	}

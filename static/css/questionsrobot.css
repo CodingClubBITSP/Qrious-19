@@ -1,0 +1,235 @@
+
+
+
+html,body
+{
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    user-select: none;
+}
+@media only screen and (min-width:600px)  {
+.container{
+    background-size: cover;
+    background-image: url("../Images/Apocalypse Web Version Questionnaire.svg");
+    background-blend-mode: multiply;
+    position: absolute;
+    align-content: center;
+    height:100vh; 
+    width: 100vw;
+    /* filter: blur(3px); */
+    z-index: 0;
+
+} 
+.yolo
+{
+  /*border: 1px solid black;*/
+  height: 100px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.imgOverlay{
+    position: absolute;
+    height: 100vh;
+    width:100vw;
+    background-color: black;
+    opacity:0.4;
+    z-index: 0.5;
+}
+
+.question
+{
+    display: flex;
+    margin-top:12vh;
+    height:13vh;
+    width:90vw;
+    margin-left:5vw;
+    background-color:#878787;
+    border-radius: 15px;
+    vertical-align:middle;
+    font-family:Helvetica;
+    padding:1.5vw;
+    justify-content: center;
+z-index: 3;
+align-items: center;
+border:0.5px solid whitesmoke;
+
+}
+
+.options
+{   display:flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:   #878787;
+    height: 10vh;
+    width: 25vw;;
+    border-radius: 15px;
+    vertical-align: middle;
+    margin-top: 4vh;
+    vertical-align: middle;
+    justify-content: center;
+z-index: 3;
+align-items: center;
+border:0.5px solid whitesmoke;
+
+}
+#option1
+{
+    margin-left:15vw;
+    margin-top:10vh;
+}
+#option2
+{
+    margin-left: 60vw;
+    margin-top:-10vh;
+}
+#option3
+{
+    margin-left:15vw;
+    margin-top:15vh;
+}
+#option4
+{
+    margin-left:60vw;
+    margin-top:-10vh;
+}
+.lowbtn
+{
+    display: flex;
+    width: 15vw;
+    height: 10vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgba(62, 146, 255, 0.8);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    border:0.5px solid whitesmoke;
+
+
+}
+.options:hover{
+    background:  rgba(137,134,181,0.8);
+    transition: inherit;
+    transition-duration: 0.3s;
+
+    
+}
+.lowbtn:hover
+{
+    background: rgba(137,134,181,0.8);
+    transition: inherit;
+    transition-duration: 0.3s;
+
+}
+.selected { background:rgba(0, 119, 255, 0.5); }
+.selected:hover{
+    background: rgba(0, 119, 255, 0.5);
+}
+}
+
+
+@media only screen and (max-width : 600px) {
+.container{
+    background-image: url("../Images/Apocalypse Mobile Version Questionnaire.svg");
+    background-blend-mode: multiply;
+    align-content: center;
+    position:absolute;
+    height:100vh; 
+    width: 100vw;
+    /* filter: blur(4px); */
+}
+.imgOverlay{
+    position: absolute;
+    height: 100vh;
+    width:100vw;
+    background-color: black;
+    opacity:0.4;
+    z-index: 0.5;
+}
+
+.option{
+        height: 55vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        z-index: 100;
+
+    }
+.options{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  #878787;
+    height: 10vh;
+    width: 92vw;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3.5vh 5vw;
+    z-index: 100;
+    border:0.5px solid whitesmoke;
+
+    }
+.option1a, .option2b{
+        height: 55vh;
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+.question{
+    margin-top: 9vh;
+    height: 20vh;
+    width: 92vw;
+    background-color:#878787;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:Helvetica;
+    font-size: 2.5vh;
+    margin-left: 4vw;
+    padding: 3.5vw;
+    z-index: 100;
+    border:0.5px solid whitesmoke;
+
+    }
+.lowbtn{
+    width: 25vw;
+    height: 10vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(62, 146, 255, 0.8);
+    border-radius: 15px;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:0.5px solid whitesmoke;
+}
+
+.yolo
+{
+  /*border: 1px solid black;*/
+  height: 100px;
+ /* margin-top: 2px;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+
+.selected { background:rgba(0, 119, 255, 0.5); }
+
+}
+

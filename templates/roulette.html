@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+{%load staticfiles%}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Roulette</title>
+	<link rel="stylesheet" type="text/css" href="{%static "css/roulette.css"%}">
+	<script src="{%static "js/jquery.min.js"%}"></script>
+</head>
+<body>
+	<div class="wraper">
+		<div class="container">
+			<div id="roulette">
+				<img src="{%static "Images/ROULLETE156.svg"%}">
+			</div>
+			<div id="pointer"></div>
+		</div>
+		<div class="button" onclick="rand()">START</div>
+		<!-- <div class="question1">
+			<iframe src="mythologydes.html" style="width: 100vw; height: 100vh; margin:0; border:none;"></iframe>
+		</div>
+		<div class="question2">
+			<iframe src="magicdes.html" style="width: 100vw; height: 100vh; margin:0; border:none;"></iframe>
+		</div>
+		<div class="question3">
+			<iframe src="roboticdes.html" style="width: 100vw; height: 100vh; margin:0; border:none;"></iframe>
+		</div>
+		<div class="question4">
+			<iframe src="gamingdes.html" style="width: 100vw; height: 100vh; margin:0; border:none;"></iframe>
+		</div> -->
+	</div>
+
+	<script src="{%static "js/roulette.js"%}"></script>
+	<script src="{%static "js/ajax.js"%}"></script>
+</body>
+</html>

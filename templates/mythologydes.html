@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+{%load staticfiles%}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Qrious</title>
+    <!-- <script src="jquery-1.10.2.min.js"></script> -->
+     <!-- <script src="full-screen-helper.js"></script> -->
+     <script src="{%static "js/jquery.min.js"%}"></script>
+     <link rel="stylesheet" href="{%static "css/loder.css"%}">
+	 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+   <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|ZCOOL+KuaiLe" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Acme|Baloo+Thambi|Permanent+Marker|ZCOOL+KuaiLe" rel="stylesheet">
+   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+   <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="{%static "fontawesome/css/all.css"%}">
+   <link rel="stylesheet" type="text/css" href="{%static "css/mythology.css"%}">
+</head>
+<body>
+		<div class="card">
+			<h6>Mythology</h6>
+			<button onclick=changePage()>Jump in! </button>
+		</div>
+      <div id="sidebar">
+  <ul>
+     <li><a href="#" >Home</a></li>
+    <li><a href="#" onclick="openNav()">Information</a></li>
+    <li><a href="#">Leaderboard</a></li>
+    <li><a href="#" id="toggle-btn1" onclick="toggleFullScreen()"><i class="fas fa-desktop"></i></a></li>
+
+  </ul>
+</div>
+<div id="toggle-btn" onclick="toggleSidebar(this)">
+  <span></span>
+  <span style="width: 15px;"></span>
+  <span></span>
+</div>
+<div id="nav" class="overlay">
+   <a href="#" class="closeBtn" onclick="closeNav()">&times</a>
+   <div class="overlay__content">
+      <a href="#">About</a>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   </div>
+</div>
+<div class="humble">
+<div class="good">
+<a href="#" onclick="window.location.href='leaderboard.html'" class= "fa fa-trophy trop"></a>
+<a href="#" class= "fa fa-info openBtn" onclick="openNav()"></a>
+</div>
+<div class="final">
+<a href="#" class="open"  onclick="toggleFullScreen()"><i class="fas fa-arrows-alt"></i></a>
+<a href="#" class="close" onclick="toggleFullScreen()"><i class="fas fa-compress-arrows-alt"></i></i></a>
+</div>
+</div>
+
+<div class="bits">
+<div class="logo"></div>
+<div class="logo1"></div>
+</div>
+<script type="text/javascript">
+
+   function openNav()
+   {
+      document.getElementById('nav').style.height = "100%";
+
+   }
+   function closeNav()
+   {
+      document.getElementById('nav').style.height = "0%";
+
+   }
+
+   function toggleSidebar(ref) {
+  ref.classList.toggle('active');
+  document.getElementById('sidebar').classList.toggle('active');
+
+        }
+
+function toggleFullScreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {
+      document.documentElement.requestFullScreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullScreen) {
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+  }
+}
+window.addEventListener('resize', function(){
+             if(screen.width === window.innerWidth){
+                $('.final').toggleClass('active');
+                $('.close').toggleClass('active');
+  }
+});
+
+
+  function changePage()
+   {
+      window.location.href = ("questionsmodmythology.html");
+   }
+
+
+</script>
+</body>
+</html>

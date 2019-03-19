@@ -1,0 +1,144 @@
+<style>
+    body
+    {
+        background-color: blueviolet;
+    }
+.container
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.circle
+{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: anim 2s linear infinite;
+}
+.circle-container:nth-child(2) .circle
+{
+    /* display: none; */
+    animation-delay: -0.3s;
+}
+.circle-container:nth-child(3) .circle
+{
+    /* display: none; */
+    animation-delay: -0.6s;
+}
+@keyframes anim {
+  0% {
+    transform-origin: 400% 50%;
+  }
+  50% {
+    transform: rotate(360deg);
+    transform-origin: 400% 50%;
+  }
+  50.1% {
+    transform: rotate(0);
+    transform-origin: -300% 50%;
+  }
+  100% {
+    transform: rotate(-360deg);
+    transform-origin: -300% 50%;
+  }
+}
+@keyframes shadow
+{
+    0%
+    {
+
+    }
+    12.5%
+    {
+        transform: translate(50px) scale(0.6);
+    }
+    25%
+    {
+        transform: translate(110px);
+    }
+    35.75%{
+        transform: translate(50px) scale(1.4);
+    }
+    50%{
+        transform: translate(0px);
+    }
+    62.5%{
+        transform: translate(-50px) scale(0.6);
+    }
+    75%{
+        transform: translate(-110px);
+    }
+    85.75%{
+        transform: translate(-50px) scale(1.4);
+    }
+    100%{
+        transform: translate(0px);
+    }
+
+}
+.circle-container
+{
+    width: 400px;
+    height: 200px;
+    background:none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.circle-container:after
+{
+    content: "";
+    width: 20px;
+    height: 5px;
+    position: absolute;
+    background-color: #000;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    opacity: 0.4;
+    animation: shadow 2s linear infinite;
+}
+.circle-container:nth-child(2):after
+{
+    animation-delay: -0.3s;
+}
+.circle-container:nth-child(3):after
+{
+    animation-delay: -0.6s;
+}
+</style>
+<div class="container">
+    <div class="circle-container">
+    <div class="circle"></div>
+</div>
+<div class="circle-container">
+    <div class="circle"></div>
+</div>
+<div class="circle-container">
+    <div class="circle"></div>
+</div>
+</div>
+
+<script>
+    var colors = ["#001f3f","#0074d9","#7fdbff","#39CCCC","#3D9970","#2ECC40","#01FF70","#FFDC00","#85144b","#F012BE"];
+
+    document.body.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+    setTimeout(function(){
+        window.location.href= ("roulette.html");
+        window.location.href= ("magicaldes.html");
+        window.location.href= ("mythologydes.html");
+        window.location.href= ("roboticdes.html");
+        window.location.href= ("gamingdes.html");
+        window.location.href= ("questionsmodgaming.html");
+        window.location.href= ("questionsmodmagical.html");
+        window.location.href= ("questionsmodmythology.html");
+        window.location.href= ("questionsrobotic.html");
+        window.location.href= ("leaderboard.html")
+    },5000);
+</script>

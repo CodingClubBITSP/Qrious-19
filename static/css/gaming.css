@@ -1,0 +1,149 @@
+*
+	{
+		margin: 0;
+		padding: 0;
+	}
+body, html {
+   height: 100%;
+   margin: 0;
+   overflow: hidden;
+}
+@font-face
+{
+	font-family: "pdark";
+	src: url("pdark.ttf");
+}
+h5
+{
+	text-shadow: 10px 10px 5px #1f446e;
+	text-align: center;
+	font-family: "pdark" !important;
+	font-size: 9.6vw/*125px*/;
+	position: relative;
+	top: 0vh;
+	left: -10vw;
+	color: aqua;
+}
+.wraper {
+	 background-image: url("../Images/Gaming.svg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+}
+
+background-image
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: scale(1.2);
+}
+
+.card
+{
+	width: 80%;
+	height: 75%;
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	transform: translate(-50%,-50%);
+	/*background-color: rgba(256,256,256,0.5);*/
+	border-radius: 4px;
+	z-index: 2;
+}
+
+/*@font-face {
+	font-family: game_over;
+	src: url("myGame.ttf");
+	}*/
+
+.card > #btn
+{
+	position: relative;
+	top: 30vh;
+	left: 14vw;
+	font-size: 4.3vw;
+	padding: 1vw;
+	border: none;
+	font-family: pdark;
+	/*letter-spacing: 5px;*/
+	color: cyan;
+	background-color: #0d1628;
+	z-index: 10;
+}
+
+#btn:hover
+{
+	cursor: pointer;
+	animation: changeColor 0.5s linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes changeColor
+{
+	100% {
+		background-color: cyan;
+		color: black;
+	}
+}
+
+@font-face {
+   font-family: pdark;
+   src: url("pdark.ttf");
+   }
+  /* @media only screen and (min-width: 800px) {
+   	body {
+   	 background-image: url('Images/gaming.svg');
+     background-repeat: no-repeat;
+     height: 100vh;
+     width: 100vw;
+     background-size: cover;
+ 	}
+ }*/
+   @media only screen and (max-width: 800px) {
+   	.wraper {
+	 background-image: url("../Images/gaming_mobile.svg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    /*flex-direction: column;
+*/    justify-content: center;
+}
+
+  /*body {
+     background-image: url('Images/gaming_mobile.svg');
+     background-repeat: no-repeat;
+     height: 100vh;
+     width: 100vw;
+     background-size: cover;
+  }*/
+  .card > #btn
+{
+	position: relative;
+	top: 55vh;
+	left: 7vw;
+	font-size: 4.3vw;
+	padding: 1vw;
+	border: none;
+	font-family: pdark;
+	/*letter-spacing: 5px;*/
+	color: cyan;
+	background-color: #0d1628;
+	z-index: 10;
+}
+h5
+{
+	text-shadow: 10px 10px 5px #1f446e;
+	text-align: center;
+	font-family: pdark;
+	font-size: 14vw/*125px*/;
+	position: relative;
+	top: 0vh;
+	left: -3vw;
+	color: aqua;
+}
+}

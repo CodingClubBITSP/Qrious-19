@@ -1,0 +1,241 @@
+@font-face
+{
+  font-family: Orbitron;
+  src: url("Orbitron.ttf");
+}
+ *
+  {
+    margin: 0;
+    padding: 0;
+  }
+body, html { 
+   height: 100%;
+   margin: 0;
+   border:none;
+   padding:0;
+   overflow: hidden;
+}
+
+h1
+{
+  text-align: center;
+  font-family: Orbitron; 
+  font-size: 13vh;
+  position: relative;
+  top: 0vh;
+  left: 2vw;
+  display: inline;
+}
+#a{
+    color: #e5e9e9;
+}
+#b{
+    color: #59544d;
+  }
+.wraper {
+   background-image: url("../Images/Apoclypse.svg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    overflow: hidden;
+    border:none;
+    margin:0;
+}
+
+background-image
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(1.2);
+}
+
+.card
+{
+  width: 80%;
+  height: 75%;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%,-50%);
+  /*background-color: rgba(256,256,256,0.5);*/
+  border-radius: 4px;
+  z-index: 2;
+}
+
+
+.card > #btn
+{
+ 
+  position: relative;
+  top: 45vh;
+  left: -35vw;
+   width: 19vw;
+    height: 12vh;
+    line-height: 12vh;
+    text-align: center;
+    font-size: 6vh;
+    background-color: #e5e9e9;
+    color: #4a4f50;
+    border-radius: 30px;
+    font-family:Orbitron;
+    border: none;
+}
+
+#btn:hover
+{
+  cursor: pointer;
+  animation: changeColor 0.5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes changeColor
+{
+  100% {
+    color: #e5e9e9;
+    background-color: #4a4f50;
+  }
+}
+
+
+  @media only screen and (max-width: 1025px) {
+    .wraper {
+   background-image: url("../Images/Robotic_mobile.svg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+    /*flex-direction: column;
+*/    justify-content: center;
+}
+
+
+  .card > #btn
+{
+
+  position: relative;
+  top: 55vh;
+  left: 3vw;
+  width: 60vw;
+    height: 12vh;
+    line-height: 12vh;
+    text-align: center;
+    font-size: 5vh;
+    background-color: #e5e9e9;
+    color: #4a4f50;
+    border-radius: 30px;
+    font-family: Orbitron;
+}
+h1
+{
+  text-align: center;
+  font-family: Orbitron; 
+  font-size: 9vh/*125px*/;
+  position: relative;
+  top: 0vh;
+  left: -3vw;
+  display: inline;
+}
+#a{
+    color: #59544d;
+}
+#b{
+    color: #e5e9e9;
+  }
+}
+   @media only screen and (max-width: 800px) {
+    .wraper {
+   background-image: url("../Images/Robotic_mobile.svg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+    /*flex-direction: column;
+*/    justify-content: center;
+}
+
+  .card > #btn
+{
+  
+  position: relative;
+  top: 55vh;
+  left: 3vw;
+  width: 60vw;
+    height: 12vh;
+    line-height: 12vh;
+    text-align: center;
+    font-size: 5vh;
+    background-color: #e5e9e9;
+    color: #4a4f50;
+    border-radius: 30px;
+    font-family:Orbitron;
+}
+h1
+{
+  text-align: center;
+  font-family: Orbitron; 
+  font-size: 6.5vh/*125px*/;
+  position: relative;
+  top: 0vh;
+  left: -3vw;
+  display: inline;
+}
+#a{
+    color: #59544d;
+}
+#b{
+    color: #e5e9e9;
+  }
+}
+  @media only screen and (max-width: 415px) {
+    .wraper {
+   background-image: url("../Images/Robotic_mobile.svg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+    /*flex-direction: column;
+*/    justify-content: center;
+}
+
+ 
+  .card > #btn
+{
+  
+  position: relative;
+  top: 55vh;
+  left: 3vw;
+  width: 60vw;
+    height: 12vh;
+    line-height: 12vh;
+    text-align: center;
+    font-size: 5vh;
+    background-color: #e5e9e9;
+    color: #4a4f50;
+    border-radius: 30px;
+    font-family: Orbitron;
+}
+h1
+{
+  text-align: center;
+  font-family: Orbitron; 
+  font-size: 6vh/*125px*/;
+  position: relative;
+  top: 0vh;
+  left: -3vw;
+  display: inline;
+}
+#a{
+    color: #59544d;
+}
+#b{
+    color: #e5e9e9;
+  }
+}
+
