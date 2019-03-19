@@ -155,7 +155,6 @@ def getquestion(request):
             request.user.userdata.current_reality = 0
             request.user.userdata.save()
             question = Question.objects.get(question_no=1)
-            roulette(request)
             return HttpResponseRedirect('/roulette')
         score = request.user.userdata.score
         print("correct_choice=", question.correct_choice)
