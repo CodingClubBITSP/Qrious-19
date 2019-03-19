@@ -79,6 +79,7 @@ $(document).ready(function () {
             xhr.setRequestHeader("X-CSRFToken", csrftoken);
         }
       });
+      if(counter%5==0 && counter!=0)window.location.href='roulette.html';
       $.ajax({
         type: "POST",
         url: "/answer/ajax/post",
