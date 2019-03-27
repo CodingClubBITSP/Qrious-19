@@ -1,0 +1,5 @@
+db.sqlite3
+myapp/__pycache__/models.cpython-36.pyc
+myapp/__pycache__/urls.cpython-36.pyc
+myapp/__pycache__/views.cpython-36.pyc
+

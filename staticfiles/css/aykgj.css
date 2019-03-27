@@ -1,0 +1,319 @@
+*,
+*:after,
+*:before {
+    box-sizing:(border-box);
+}
+
+html, body { height: 100%; }
+html { font-size: 62.5%; }
+
+@mixin media-query($media-query) {
+    @if $media-query == small {
+      @media only screen and (max-width: $screenMedium - 1) { @content; }
+    }
+
+    @if $media-query == medium {
+      @media only screen and (min-width: $screenMedium) { @content; }
+    }
+
+    @if $media-query == medium-only {
+      @media only screen and (min-width: $screenMedium) and (max-width: $screenWide - 1) { @content; }
+    }
+
+    @if $media-query == wide {
+      @media only screen and (min-width: $screenWide) { @content; }
+    }
+
+    @if $media-query == huge {
+      @media only screen and (min-width: $screenHuge) { @content; }
+    }
+}
+
+@mixin small-only { @include media-query(small) { @content }; }
+@mixin medium { @include media-query(medium) { @content }; }
+@mixin medium-only { @include media-query(medium-only) { @content }; }
+@mixin wide { @include media-query(wide) { @content }; }
+@mixin huge { @include media-query(huge) { @content }; }
+
+
+%clearfix {
+	&:before,
+	&:after {
+    	content:"";
+    	display:table;
+	}
+
+	&:after  { clear:both; }
+}
+// end clearfix helper
+
+
+// note: we prefer using the term 'clearfix'
+// ... but also 'group' (more friendly, yes?)
+// TODO: check for 'group' possible style collisions with team ?
+.clearfix {
+	@extend %clearfix;
+}
+
+//
+// Vendor prefixer(s)
+//
+$vendor: '', '-webkit-', '-moz-', '-ms-', '-o-';
+
+// new vendor prefixer MIXIN
+// TODO: check if this is working
+@mixin prefixr($property, $value) {
+    /*
+    -webkit-#{$property}: $value;
+       -moz-#{$property}: $value;
+        -ms-#{$property}: $value;
+            #{$property}: $value;
+    */
+
+    @each $prefix in $vendor {
+        #{$prefix}#{$property}: $value;
+    }
+}
+
+// "all around" goodies
+.sepa { width:90%; height:1px; margin: 0px auto; border-top:1px dashed #ecf0f1; }
+.noselect { -moz-user-select:-moz-none; -khtml-user-select:none; -webkit-user-select:none; user-select:none; }
+
+//
+// Force Hardware Acceleration
+// (aka "null" transform hack)
+//
+@mixin noflicker {
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+}
+
+//
+// Positioning helpers
+//
+
+// Translate center
+@mixin translateCenter {
+    position:  absolute;
+    top:       50%;
+    left:      50%;
+    transform: translate(-50%, -50%);
+}
+
+// "Absolute margin auto" hack
+@mixin positionCenter {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+// Font-size MIXIN
+// automatically apply rem font-size with px fallback (base 10)
+// ... and add 1.5 line-height. default is 16px/1.6rem + 1.5
+@mixin font-size($sizeValue: 16, $line: 1.5){
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 10) + rem;
+    line-height: $line;
+}
+
+// Retina MIXIN
+@mixin image-set($img, $type) {
+    background-image: url($img + $type);
+
+    @each $prefix in $vendor {
+        background-image: #{$prefix}image-set(  url($img + $type) 1x,
+                                                url($img + "@2x" + $type) 2x );
+    }
+}
+
+// ---------------------------------------------------------------------------- //
+// ---------- ANIMATIONS ------------------------------------------------------ //
+// ---------------------------------------------------------------------------- //
+
+// Custom animation easings
+$animationEasing: cubic-bezier(0.455, 0.030, 0.515, 0.955) !default;
+
+// pause CLASS
+// pause all current animations on element (check browser current compability status!)
+.pause-anim {
+  @include animation-play-state(paused !important);
+}
+
+// Keyframes MIXIN
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+// Animate MIXIN
+// TODO: switch to mixin includes instead of basic CSS ?
+// ... or do we still need some old browser here-and-there "tweaks" ? -.-
+@mixin animate($name, $duration: 1s, $delay: 0, $timing: initial, $iterations: initial, $direction: normal, $fill: forwards) {
+    // ---------- Mozilla ---------------------------------------- //
+    -moz-animation-name: $name;
+    -moz-animation-duration: $duration;
+    -moz-animation-delay: $delay;
+    -moz-animation-timing-function: $timing;
+    -moz-animation-iteration-count: $iterations;
+    -moz-animation-direction: $direction;
+    -moz-animation-fill-mode: $fill;
+
+    // ---------- Webkit ----------------------------------------- //
+    -webkit-animation-name: $name;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-timing-function: $timing;
+    -webkit-animation-iteration-count: $iterations;
+    -webkit-animation-direction: $direction;
+    -webkit-animation-fill-mode: $fill;
+
+    -o-animation-name: $name;
+    -o-animation-duration: $duration;
+    -o-animation-delay: $delay;
+    -o-animation-timing-function: $timing;
+    -o-animation-iteration-count: $iterations;
+    -o-animation-direction: $direction;
+    -o-animation-fill-mode: $fill;
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-delay: $delay;
+    animation-timing-function: $timing;
+    animation-iteration-count: $iterations;
+    animation-direction: $direction;
+    animation-fill-mode: $fill;
+}
+
+@mixin animation-timing-function($name) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-timing-function: $name;
+    }
+}
+
+@mixin animation-name($name) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-name: $name;
+    }
+}
+
+@mixin animation-fill-mode($mode) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-fill-mode: $mode;
+    }
+}
+
+@mixin animation-duration($duration) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-duration: $duration;
+    }
+}
+
+@mixin animation-direction($direction) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-direction: $direction;
+    }
+}
+
+@mixin animation-play-state($state) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-play-state: $state;
+    }
+}
+
+@mixin animation-iteration-count($value) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-iteration-count: $value;
+    }
+}
+
+@mixin animation-delay($value) {
+    @each $prefix in $vendor {
+        #{$prefix}animation-delay: $value;
+    }
+}
+
+$animDelay: -1s;
+
+@mixin delay {
+  @include animation-delay($animDelay);
+  $animDelay: $animDelay + 0.1;
+}
+
+
+@function makelongshadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 200 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin longshadow($color, $darkenPercent) {
+  text-shadow: makelongshadow(darken($color, $darkenPercent));
+}
+
+
+$svg-color-active: #e25027 !default;
+$svg-color-inactive: #ebebeb !default;
+
+@include keyframes(svg_outline) {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+@include keyframes(svg_outline_hide) {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        stroke-width: 0;
+    }
+}
+
+
+@include keyframes(svg_fill_active) {
+    100% {
+        fill: $svg-color-active;
+        fill-opacity: 1;
+    }
+}
+
+
+@include keyframes(svg_fill_inactive) {
+    100% {
+        fill: $svg-color-inactive;
+        fill-opacity: 1;
+    }
+}
+
+
+@include keyframes(svg_stroke_inactive) {
+    100% {
+        stroke: $svg-color-inactive;
+    }
+}
+
+@include keyframes(svg_stroke_active) {
+    100% {
+        stroke: $svg-color-active;
+    }
+}

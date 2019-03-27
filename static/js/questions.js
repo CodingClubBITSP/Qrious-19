@@ -44,6 +44,7 @@ $(document).ready(function () {
        document.getElementById('option2').innerHTML = question.option2;
        document.getElementById('option3').innerHTML = question.option3;
        document.getElementById('option4').innerHTML = question.option4;
+       M.Toast.dismissAll();
    }
    // console.log(question);
    function SkipOption() {
@@ -94,7 +95,7 @@ $(document).ready(function () {
              score = JSON.parse(question.score);
              // append in html
              console.log(question);
-             document.getElementById("marks").innerHTML="Score :"+score;
+             document.getElementById("marks2").innerHTML="Score :"+score;
              loadQuestion();
            }
          }
@@ -102,12 +103,15 @@ $(document).ready(function () {
 }
 
   function SubmitOption() {
-      document.getElementById("submit").click();
+
+      // document.getElementById("submit").click();
+      if(!document.getElementsByClassName("selected")[0]) {
+        M.toast({html: 'Please select an option!'});
+      } else {
+          M.toast({html: 'Loading question!'})
+      }
       var ans = document.getElementsByClassName("selected")[0].innerHTML;
       console.log(ans);
-      if(!ans) {
-        document.getElementsByClassName('alert')[0].style.animation = 'showAlert 2s ease-in-out';
-      }
 
       var data = {
         "question": counter,
@@ -155,9 +159,10 @@ $(document).ready(function () {
           //
           question = JSON.parse(this.responseText);
           score = JSON.parse(question.score);
+          console.log(score);
           // append in html
           console.log(question);
-          document.getElementById("marks").innerHTML="Score :"+score;
+          document.getElementById("marks2").innerHTML="Score :"+score;
           loadQuestion();
         }
       }

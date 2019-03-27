@@ -1,0 +1,142 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+@media only screen and (min-width:800px){
+.wraper{
+    background: url("../Images/Apoclypse.svg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.head{
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    height: 40vh;
+    width: 63vw;
+    align-items: center;
+    justify-content: center;
+    /* letter-spacing: 1vh; */
+}
+#a{
+    color: #e5e9e9;
+    font-size: 13vh;
+}
+#b{
+    color: #59544d;
+    font-size: 13vh;
+}
+.button{
+    width: 19vw;
+    height: 12vh;
+    line-height: 12vh;
+    text-align: center;
+    font-size: 6vh;
+    background-color: #e5e9e9;
+    color: #4a4f50;
+    border-radius: 30px;
+}
+.container{
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    width: 55vw;
+    height: 80vh;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+.button:hover
+   {
+      cursor: pointer;
+      animation: colorChange 0.5s linear;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes colorChange
+   {
+      100% {
+         color: #e5e9e9;
+         background-color: #4a4f50;
+      }
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+.wraper{
+    background: red/*url("Images/Robotic_mobile.svg")*/;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.head{
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    height: 40vh;
+    width: 63vw;
+ 
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1vh; 
+}
+#a{
+    color: #e5e9e9;
+    font-size: 13vh;
+}
+#b{
+    color: #59544d;
+    font-size: 13vh;
+}
+.button{
+    width: 19vw;
+    height: 12vh;
+    line-height: 12vh;
+    text-align: center;
+    font-size: 6vh;
+    background-color: #e5e9e9;
+    color: #4a4f50;
+    border-radius: 30px;
+}
+.container{
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    width: 55vw;
+    height: 80vh;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+.button:hover
+   {
+      cursor: pointer;
+      animation: colorChange 0.5s linear;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes colorChange
+   {
+      100% {
+         color: #e5e9e9;
+         background-color: #4a4f50;
+      }
+
+}
+
+
+
+
+
+}}
