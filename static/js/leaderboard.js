@@ -46,7 +46,7 @@ function updateLeaderboardView() {
     head.innerText = "LeaderBoard";
     head.classList.add("heading");
     leaderboard.appendChild(head);
-    for(let i=0; i<scores.length; i++) {
+		for(let i=0; i<scores.length; i++) {
         let name = document.createElement("div");
         let num = document.createElement("div");
         let score = document.createElement("div");
@@ -64,7 +64,7 @@ function updateLeaderboardView() {
         name.innerText = scores[i].name;
         score.innerText = scores[i].score;
         let scoreRow = document.createElement("div");
-        scoreRow.classList.add("row");
+        scoreRow.classList.add("row1");
         scoreRow.appendChild(num);
         scoreRow.appendChild(name);
         scoreRow.appendChild(score);

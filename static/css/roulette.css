@@ -28,13 +28,19 @@ body{
     }
     .second{
     	animation: rotate 10s ease-in-out 1;
-    	animation-fill-mode: both; 
+    	animation-fill-mode: both;
     }
     @keyframes rotate
     {
     	0% { transform: rotate(0deg); }
     	100% { transform: rotate(1440deg); }
-    }
+	}
+
+	@font-face
+{
+  font-family: hey;
+  src: url("NeonVampire.ttf");
+}
 	.button{
 		margin: 5vh;
 		height: 10vh;
@@ -43,9 +49,9 @@ body{
 		border-radius: 12px;
 		line-height: 10vh;
 		text-align: center;
-		font-size: 1.1vw;
+		font-size: 2.5vw;
 		color: white;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: hey;
 		z-index: 10;
 		cursor: pointer;
 	}
@@ -80,7 +86,7 @@ body{
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-	}	
+	}
 	#pointer{
 		background: url("Images/Pointer.svg");
 		width: 100px;
@@ -91,11 +97,13 @@ body{
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 100;
-		
+
 	}
 	.container{
 		height: 80vh;
 		width: 80vh;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	@media all and (max-width: 600px){
 		#roulette{
@@ -109,6 +117,8 @@ body{
 		.container{
 			height: 80vw;
 			width: 80vw;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		.button{
 			width: 80vw;

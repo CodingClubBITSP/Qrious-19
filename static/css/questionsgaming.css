@@ -4,7 +4,7 @@ html,body
 
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-
+    background-image: url("../Images/gaming_background.jpg");
     margin: 0;
     overflow: hidden;
     height: 100vh;
@@ -15,12 +15,13 @@ html,body
 @media only screen and (min-width:600px)  {
 .container{
     background-size: cover;
-    background-image: url("../Images/gaming_background.jpg");
+    /* background-image: url("../Images/gaming_background.jpg"); */
+    background-position: center;
     background-blend-mode: multiply;
     position: absolute;
     align-content: center;
     height:100vh; 
-    width: 100vw;
+    width: 100%;
     z-index: 0;
     /* bottom:20vh; */
     background-repeat: no-repeat;
@@ -193,6 +194,7 @@ z-index: 30;
     font-size: 2.5vh;
     margin-left: 4vw;
     z-index: 100;
+    text-align: center;
     border:0.7px solid whitesmoke;
     padding:5px;
 

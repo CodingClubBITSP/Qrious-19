@@ -30,7 +30,7 @@ body {
 	top: 0;
 	left: 0;
 }*/
-.card
+.card1
 {
 	width: 80%;
 	height: 75%;
@@ -44,20 +44,21 @@ body {
 }
 @font-face {
    font-family:harry;
-   src: url("HARRP.ttf");
+   src: url("HARRP.TTF");
    }
  button {
-   	background-color: #f7c77e;
-    border: none;
-   	font-size: 5vw;
-   	position: absolute;
-   	left: 15vw;
-   	top: 53vh;
+   background-color: #f7c77e;
+   border: none;
+   font-size: 5vw;
+   position: absolute;
+   left: 15vw;
+   top: 53vh;
     border-radius: 20px;
     padding-top: 1vh;
     padding-left: 1.1vw;
     padding-right: 1.1vw;
-   	font-family: harry;
+    padding-bottom: 1vh;
+   font-family:harry;
     color: #931406;
    }
    button:hover
@@ -74,7 +75,7 @@ body {
          background-color: #931406;
       }
    }
-h6{
+.card1 h6{
 	font-family: harry;
 	font-size: 11vw;
 	position: absolute; 
@@ -123,7 +124,7 @@ p {
      width: 100vw;
      background-size: cover;
   }*/
-  h6{
+ .card1 h6{
   font-family: harry;
   font-size: 15vw;
   position: absolute; 
@@ -131,17 +132,51 @@ p {
   left: 10vw; 
   color: #f5edc2;
 }
-button {
+.card1 button {
     background-color: #f7c77e;
     border: none;
     font-size: 7vw;
     position: absolute;
-    left: 0.7vw;
+    left: 10.7vw;
     top: 40vh;
     border-radius: 20px;
-    padding-top: 1vh;
+    padding-top: 3vh;
     padding-left: 1.3vw;
     padding-right: 1.3vw;
     font-family: harry;
     color: #931406;
+   }
+
+   @media (max-width:500px)
+
+   {
+      .card1 button {
+         background-color: #f7c77e;
+         border: none;
+         font-size: 7vw;
+         position: absolute;
+         left: 6.7vw;
+         top: 45vh;
+         border-radius: 20px;
+         padding-top: 2vh;
+         padding-left: 6.3vw;
+         padding-right: 5.3vw;
+         font-family: harry;
+         color: #931406;
+        }
+
+        button:hover
+   {
+      cursor: pointer;
+      animation: colorChange 0.5s linear;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes colorChange
+   {
+      100% {
+         color: #f7c77e;
+         background-color: #931406;
+      }
+   }
    }

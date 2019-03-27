@@ -18,7 +18,7 @@ body, html {
   top: 0;
   left: 0;
 }*/
-.card
+.card1
 {
   width: 80%;
   height: 75%;
@@ -34,7 +34,7 @@ body, html {
    font-family: arhaic romanesc;
    src: url("Arhaic_rom.ttf");
    }
- button {
+ .card1 button {
     background-color: transparent;
       border: 3px solid #D6A009;
     font-size: 4.5vw;
@@ -60,7 +60,7 @@ body, html {
          border: 3px solid #a14d0c;
       }
    }
-h6{
+.card1 h6{
     font-family: arhaic romanesc;
       position: absolute;
       top: 0vh;
@@ -97,13 +97,13 @@ p {
  }
    @media only screen and (max-width: 800px) {
   body { 
-     background-image: url('../Images/mythology_mobile.svg');
+     background-image: url('../Images/Mythology_mobile.svg');
      background-repeat: no-repeat;
      height: 100vh;
      width: 100vw;
      background-size: cover;
   }
-  h6{
+  .card1 h6{
   font-family: arhaic romanesc;
   font-size: 15vw;
   position: absolute; 

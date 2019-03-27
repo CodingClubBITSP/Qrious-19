@@ -3,11 +3,11 @@
   margin:0px;
   padding:0px;
   box-sizing:border-box;
-
+ 
 }
 body {
   overflow:hidden;
-
+  
 }
 
 
@@ -17,7 +17,7 @@ body {
   left:0px;
   width:200px;
   height:100vh;
-
+  
   text-align:center;
   transform-origin:left;
   transform:perspective(1200px) rotateY(90deg);
@@ -28,7 +28,7 @@ body {
   align-items: center;
   display: none;
 
-
+  
 }
 
 #sidebar ul li  {
@@ -58,14 +58,14 @@ color:#ccc;
   position:absolute;
   left:30px;
   top:20px;
-
+  
   transition:left 200ms linear 0ms,transform 300ms ease 100ms;
 }
 #toggle-btn.active {
   z-index: 10;
   left:150px;
   transform:rotate(360deg);
-  color:white;
+  color:white;  
 }
 #toggle-btn span {
   display: none;
@@ -83,30 +83,18 @@ color:#ccc;
   transform:rotate(-45deg);
 }
 .humble
-{
+{ 
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 100%;
+  width: 50%;
   height: 80px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   z-index: 1000;
-  font-size: 20px;
-  
   /*border: 1px solid black;*/
 
-}
-#user {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 50%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
 }
 .good
 {
@@ -117,7 +105,7 @@ color:#ccc;
   align-items: center;
   justify-content: flex-end;
 
-
+	
 }
 
 .good a
@@ -201,14 +189,14 @@ color:#ccc;
 .close.active
 {
   display: block;
-}
+} 
 
 .close.active
 {
   display: block;
   transform: rotate(0deg);
 
-}
+} 
 
 .final.active .open
 {
@@ -224,7 +212,7 @@ color:#ccc;
 	text-decoration: none;
 	font-size: 24px;
 	color: white;
-
+	
 	padding-top: 13px;
 	padding-bottom: 13px;
 	padding-left: 25px;
@@ -233,7 +221,7 @@ color:#ccc;
 }
 
 .bits
-{
+{   
 	position: absolute;
 	bottom:  10px;
 	right: 10px;
@@ -248,7 +236,7 @@ color:#ccc;
 
 
 .logo
-{
+{   
     width: 60px;
     height: 60px;
     background-image: url('../Images/39666368.jpg');
@@ -258,7 +246,7 @@ color:#ccc;
     border-radius: 10px;
     position: relative;
     left: -5px;
-
+    
 }
 
 .logo1
@@ -272,7 +260,7 @@ color:#ccc;
     border-radius: 10px;
  }
 .overlay
-{
+{       
 	    font-family: sans-serif;
 	    position: absolute;
 	    top: 0;
@@ -299,7 +287,7 @@ color:#ccc;
 	color: #eee;
 	font-size: 30px;
 	text-decoration: none;
-
+	
 }
 
 .overlay .closeBtn
@@ -308,14 +296,14 @@ color:#ccc;
    top: 20px;
    right: 50px;
    font-size: 50px;
-
+	
 }
 
 .overlay .closeBtn:hover
 {
    color: white;
    transition: 0.2s all ease-in;
-
+	
 }
 
 .overlay__content a
@@ -342,18 +330,18 @@ font-family: 'Baloo Thambi', cursive;
 @media screen and (max-width: 700px)
 {
     .logo
-{
-
+{   
+   
     width: 40px;
     height: 40px;
-
+    
 }
 
 .logo1
 {
     width: 40px;
     height: 40px;
-
+    
  }
 
 .overlay__content a
@@ -402,7 +390,7 @@ font-family: 'Baloo Thambi', cursive;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-
+  
 
 }
 
@@ -424,7 +412,7 @@ font-family: 'Baloo Thambi', cursive;
 .close.active
 {
   display: block;
-}
+} 
 
 .good.active .open
 {

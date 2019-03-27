@@ -6,6 +6,7 @@ html,body
 
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-image: url("../Images/Apocalypse Web Version Questionnaire.svg");
 
     margin: 0;
     overflow: hidden;
@@ -18,7 +19,7 @@ html,body
 @media only screen and (min-width:600px)  {
 .container{
     background-size: cover;
-    background-image: url("../Images/Apocalypse Web Version Questionnaire.svg");
+    /* background-image: url("../Images/Apocalypse Web Version Questionnaire.svg"); */
     background-blend-mode: multiply;
     position: absolute;
     align-content: center;
@@ -146,6 +147,9 @@ border:0.5px solid whitesmoke;
     position:absolute;
     height:100vh; 
     width: 100vw;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* filter: blur(4px); */
 }
 .imgOverlay{
@@ -201,6 +205,7 @@ border:0.5px solid whitesmoke;
     margin-left: 4vw;
     padding: 3.5vw;
     z-index: 100;
+    text-align: center;
     border:0.5px solid whitesmoke;
 
     }

@@ -5,7 +5,11 @@
 	}
 body, html {
    height: 100%;
-   margin: 0;
+	 margin: 0;
+	 background-image: url("../Images/Gaming.svg");
+	 background-position: center;
+	 background-size: cover;
+	 background-repeat: no-repeat;
    overflow: hidden;
 }
 @font-face
@@ -13,7 +17,7 @@ body, html {
 	font-family: "pdark";
 	src: url("pdark.ttf");
 }
-h5
+.card1 h5
 {
 	text-shadow: 10px 10px 5px #1f446e;
 	text-align: center;
@@ -42,7 +46,7 @@ background-image
 	transform: scale(1.2);
 }
 
-.card
+.card1
 {
 	width: 80%;
 	height: 75%;
@@ -60,7 +64,7 @@ background-image
 	src: url("myGame.ttf");
 	}*/
 
-.card > #btn
+.card1 > #btn
 {
 	position: relative;
 	top: 30vh;
@@ -121,7 +125,7 @@ background-image
      width: 100vw;
      background-size: cover;
   }*/
-  .card > #btn
+  .card1 > #btn
 {
 	position: relative;
 	top: 55vh;
@@ -146,4 +150,22 @@ h5
 	left: -3vw;
 	color: aqua;
 }
+}
+
+@media (max-width: 601px)
+{
+	body 
+	{
+		background-image: url("../Images/gaming_mobile.svg");
+	}
+
+	h5 
+{
+ font-size: 1.64rem;
+}
+
+.fixed-action-btn{
+	display: none;
+}
+	
 }
