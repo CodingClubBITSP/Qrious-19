@@ -91,9 +91,10 @@ $(document).ready(function () {
              //   // window.location.href =
              //
              question = JSON.parse(this.responseText);
-             // score = JSON.parse(this.responseText.score);
+             score = JSON.parse(question.score);
              // append in html
              console.log(question);
+             document.getElementById("marks").innerHTML="Score :"+score;
              loadQuestion();
            }
          }
@@ -153,9 +154,10 @@ $(document).ready(function () {
           //   // window.location.href =
           //
           question = JSON.parse(this.responseText);
-          // score = JSON.parse(this.responseText.score);
+          score = JSON.parse(question.score);
           // append in html
           console.log(question);
+          document.getElementById("marks").innerHTML="Score :"+score;
           loadQuestion();
         }
       }
