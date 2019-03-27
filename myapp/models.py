@@ -21,8 +21,8 @@ class Userdata(models.Model):
     last_question = models.IntegerField(default=0)
     current_reality = models.IntegerField(default=0)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.user.username+' Profile'
 
 
 class Question(models.Model):
