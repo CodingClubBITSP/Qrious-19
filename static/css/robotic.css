@@ -16,11 +16,11 @@ body, html {
    overflow: hidden;
 }
 
-h1
+.card1 h1
 {
   text-align: center;
   font-family: Orbitron; 
-  font-size: 13vh;
+  font-size: 15vh;
   position: relative;
   top: 0vh;
   left: 2vw;
@@ -53,7 +53,7 @@ background-image
   transform: scale(1.2);
 }
 
-.card
+.card1
 {
   width: 80%;
   height: 75%;
@@ -67,12 +67,12 @@ background-image
 }
 
 
-.card > #btn
+.card1 > #btn
 {
  
   position: relative;
   top: 45vh;
-  left: -35vw;
+  left: 1px;
    width: 19vw;
     height: 12vh;
     line-height: 12vh;
@@ -103,7 +103,7 @@ background-image
 
   @media only screen and (max-width: 1025px) {
     .wraper {
-   background-image: url("../Images/Robotic_mobile.svg");
+   /* background-image: url("../Images/Robotic_mobile.svg"); */
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -114,11 +114,11 @@ background-image
 }
 
 
-  .card > #btn
+  .card1 > #btn
 {
 
   position: relative;
-  top: 55vh;
+  top: 40vh;
   left: 3vw;
   width: 60vw;
     height: 12vh;
@@ -130,7 +130,7 @@ background-image
     border-radius: 30px;
     font-family: Orbitron;
 }
-h1
+.card1 h1
 {
   text-align: center;
   font-family: Orbitron; 
@@ -159,11 +159,11 @@ h1
 */    justify-content: center;
 }
 
-  .card > #btn
+  .card1 > #btn
 {
   
   position: relative;
-  top: 55vh;
+  top: 31vh;
   left: 3vw;
   width: 60vw;
     height: 12vh;
@@ -175,7 +175,7 @@ h1
     border-radius: 30px;
     font-family:Orbitron;
 }
-h1
+.card1 h1
 {
   text-align: center;
   font-family: Orbitron; 
@@ -205,23 +205,24 @@ h1
 }
 
  
-  .card > #btn
+  .card1 > #btn
 {
   
   position: relative;
-  top: 55vh;
+  top: 31vh;
   left: 3vw;
-  width: 60vw;
-    height: 12vh;
+  width: 52vw;
+    height: 10.5vh;
     line-height: 12vh;
     text-align: center;
-    font-size: 5vh;
+    font-size: 4.5vh;
     background-color: #e5e9e9;
     color: #4a4f50;
     border-radius: 30px;
     font-family: Orbitron;
+    z-index: -1;
 }
-h1
+.card1 h1
 {
   text-align: center;
   font-family: Orbitron; 

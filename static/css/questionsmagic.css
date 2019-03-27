@@ -4,7 +4,7 @@ html,body
 
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-
+        background-image: url("../Images/magical reality1.svg");
     margin: 0;
     overflow: hidden;
     height: 100vh;
@@ -16,7 +16,7 @@ html,body
 @media only screen and (min-width:600px)  {
 .container{
     background-size: cover;
-    background-image: url("../Images/magical reality1.svg");
+    /* background-image: url("../Images/magical reality1.svg"); */
     background-blend-mode: multiply;
     position: absolute;
     align-content: center;

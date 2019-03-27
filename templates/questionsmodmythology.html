@@ -5,6 +5,261 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Questions</title>
+<style>
+*{
+  font:Mont-serrat;
+  font-size: 20px;
+}
+
+            body
+      {
+          /* background: #090707; */
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+      }
+      .mainx {
+        position: absolute;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 20;
+background: #090707;
+}
+
+.dank-ass-loader {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.dank-ass-loader .rowx {
+display: flex;
+}
+
+.arrow {
+width: 0;
+height: 0;
+margin: 0 -6px;
+border-left: 12px solid transparent;
+border-right: 12px solid transparent;
+border-bottom: 21.6px solid  rgba(75,23,111);
+-webkit-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+-webkit-filter: drop-shadow(0 0 18px  rgb(192, 126, 240));
+    filter: drop-shadow(0 0 18px  rgba(75,23,111));
+}
+.arrow.down {
+-webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.arrow.outer-1 {
+-webkit-animation-delay: -0.0555555556s;
+    animation-delay: -0.0555555556s;
+}
+.arrow.outer-2 {
+-webkit-animation-delay: -0.1111111111s;
+    animation-delay: -0.1111111111s;
+}
+.arrow.outer-3 {
+-webkit-animation-delay: -0.1666666667s;
+    animation-delay: -0.1666666667s;
+}
+.arrow.outer-4 {
+-webkit-animation-delay: -0.2222222222s;
+    animation-delay: -0.2222222222s;
+}
+.arrow.outer-5 {
+-webkit-animation-delay: -0.2777777778s;
+    animation-delay: -0.2777777778s;
+}
+.arrow.outer-6 {
+-webkit-animation-delay: -0.3333333333s;
+    animation-delay: -0.3333333333s;
+}
+.arrow.outer-7 {
+-webkit-animation-delay: -0.3888888889s;
+    animation-delay: -0.3888888889s;
+}
+.arrow.outer-8 {
+-webkit-animation-delay: -0.4444444444s;
+    animation-delay: -0.4444444444s;
+}
+.arrow.outer-9 {
+-webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.arrow.outer-10 {
+-webkit-animation-delay: -0.5555555556s;
+    animation-delay: -0.5555555556s;
+}
+.arrow.outer-11 {
+-webkit-animation-delay: -0.6111111111s;
+    animation-delay: -0.6111111111s;
+}
+.arrow.outer-12 {
+-webkit-animation-delay: -0.6666666667s;
+    animation-delay: -0.6666666667s;
+}
+.arrow.outer-13 {
+-webkit-animation-delay: -0.7222222222s;
+    animation-delay: -0.7222222222s;
+}
+.arrow.outer-14 {
+-webkit-animation-delay: -0.7777777778s;
+    animation-delay: -0.7777777778s;
+}
+.arrow.outer-15 {
+-webkit-animation-delay: -0.8333333333s;
+    animation-delay: -0.8333333333s;
+}
+.arrow.outer-16 {
+-webkit-animation-delay: -0.8888888889s;
+    animation-delay: -0.8888888889s;
+}
+.arrow.outer-17 {
+-webkit-animation-delay: -0.9444444444s;
+    animation-delay: -0.9444444444s;
+}
+.arrow.outer-18 {
+-webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+.arrow.inner-1 {
+-webkit-animation-delay: -0.1666666667s;
+    animation-delay: -0.1666666667s;
+}
+.arrow.inner-2 {
+-webkit-animation-delay: -0.3333333333s;
+    animation-delay: -0.3333333333s;
+}
+.arrow.inner-3 {
+-webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.arrow.inner-4 {
+-webkit-animation-delay: -0.6666666667s;
+    animation-delay: -0.6666666667s;
+}
+.arrow.inner-5 {
+-webkit-animation-delay: -0.8333333333s;
+    animation-delay: -0.8333333333s;
+}
+.arrow.inner-6 {
+-webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+
+@-webkit-keyframes blink {
+0% {
+opacity: 0.1;
+}
+30% {
+opacity: 1;
+}
+100% {
+opacity: 0.1;
+}
+}
+.tab
+{
+    position: absolute;
+    top: 1vw;
+    left: 3vh;
+    height: 50px;
+    width: 170px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color:  rgb(17, 75, 88,0.7);
+}
+.tab2
+{
+    position: absolute;
+    top: 1vw;
+    /*left: 50vh;*/
+    right: 44.5vw;
+    height: 50px;
+    width: 11vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color:  rgba(181, 134, 167, 0.4);
+    opacity: 0.7;
+    border: 1.5px solid whitesmoke;
+}
+#logout{
+   text-align: center;
+   border-radius: 40px;
+   background-color: rgb(17, 75, 88,0.7);
+   color: white;
+   height: 50px;
+   width: 11vw;
+   position: absolute;
+   top: 1vw;
+    left: 29vh;
+    line-height: 50px;
+    align-items: center;
+
+
+}
+
+@keyframes blink {
+0% {
+opacity: 0.1;
+}
+30% {
+opacity: 1;
+}
+100% {
+opacity: 0.1;
+}
+}
+            @media (max-width : 700px)
+            {
+              .fixed-action-btn
+              {
+                display: none;
+              }
+              .tab{
+                display: none;
+              /*
+                  position: absolute;
+                  top: 1vw;
+                  left: 3vh;
+                  height: 50px;
+                  width: 25px;
+                  display:flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 40px;
+                  background-color:  rgb(17, 75, 88,0.7); */
+              }
+              .tab2
+              {
+                  position: absolute;
+                  top: 2.3vw;
+                  /*left: 25vh;*/
+                  right: 7vw;
+                  height: 50px;
+                  width: 15vw;
+                  display:flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 40px;
+                  background-color:  rgba(181, 134, 167, 0.4);
+                  opacity: 0.7;
+                  border: 1.5px solid whitesmoke;
+
+              }
+              #logout{
+                display: none;
+
+            }
+          </style>
     <!-- <script src="jquery-1.10.2.min.js"></script>
     <script src="full-screen-helper.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -22,19 +277,58 @@
     <link rel="stylesheet" href="{%static "css/animate.css"%}">
     <script src="{%static "js/jquery.min.js"%}"></script>
     <link rel="stylesheet" href="{%static "fontawesome/css/all.css"%}">
+    <link href="{%static "css/materialize.css"%}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	<div class="humble">
-<div class="good">
-<a href="#" class= "fa fa-trophy trop" onclick='window.location.href="leaderboard.html"'></a>
-<a href="#" class= "fa fa-info openBtn" onclick="openNav()"></a>
-</div>
-<div class="final">
-<a href="#" class="open"  onclick="toggleFullScreen()"><i class="fas fa-arrows-alt"></i></a>
-<a href="#" class="close" onclick="toggleFullScreen()"><i class="fas fa-compress-arrows-alt"></i></i></a>
-</div>
-</div>
-    <div class="container"></div>
+	  <main class="mainx" id="mainx">
+        <div class="dank-ass-loader">
+           <div class="rowx">
+              <div class="arrow up outer outer-18"></div>
+              <div class="arrow down outer outer-17"></div>
+              <div class="arrow up outer outer-16"></div>
+              <div class="arrow down outer outer-15"></div>
+              <div class="arrow up outer outer-14"></div>
+           </div>
+           <div class="rowx">
+              <div class="arrow up outer outer-1"></div>
+              <div class="arrow down outer outer-2"></div>
+              <div class="arrow up inner inner-6"></div>
+              <div class="arrow down inner inner-5"></div>
+              <div class="arrow up inner inner-4"></div>
+              <div class="arrow down outer outer-13"></div>
+              <div class="arrow up outer outer-12"></div>
+           </div>
+           <div class="rowx">
+              <div class="arrow down outer outer-3"></div>
+              <div class="arrow up outer outer-4"></div>
+              <div class="arrow down inner inner-1"></div>
+              <div class="arrow up inner inner-2"></div>
+              <div class="arrow down inner inner-3"></div>
+              <div class="arrow up outer outer-11"></div>
+              <div class="arrow down outer outer-10"></div>
+           </div>
+           <div class="rowx">
+              <div class="arrow down outer outer-5"></div>
+              <div class="arrow up outer outer-6"></div>
+              <div class="arrow down outer outer-7"></div>
+              <div class="arrow up outer outer-8"></div>
+              <div class="arrow down outer outer-9"></div>
+           </div>
+        </div>
+     </main>
+        <div class="fixed-action-btn click-to-toggle" style="position:absolute;top:10px;z-index: 2;">
+				<a class="btn-floating btn-large" style="background-color:rgba(0,0,0,0.7);">
+					<i class="large material-icons" style="font-size:40px;">add_circle_outline</i>
+				</a>
+				<ul>
+					<li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" href="leaderboard.html"><i class="material-icons">brightness_7</i></a></li>
+					<li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" onclick="openNav()"><i class="material-icons">info</i></a></li>
+					<li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" onclick="toggleFullScreen()"><i class="material-icons">fullscreen</i></a></li>
+					<li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" ><p></p></a></li>
+				</ul>
+			</div>
+    <div class="container" style="width:100%;"></div>
         <div class="overlay"></div>
         <div class="imgOverlay"></div>
 
@@ -47,11 +341,16 @@
             <div class="options" id="option3" >Option3</div>
             <div class="options" id="option4" >Option4</div>
         <div class="yolo">
-        <div class="lowbtn" id="prev"><p>Previous</p></div>
+        <!-- <div class="lowbtn" id="prev"><p>Previous</p></div> -->
         <div class="lowbtn" id="submit" onClick ="SubmitOption()"><p>Submit</p></div>
-        <div class="lowbtn" id="next"><p>Next</p></div>
+        <div class="lowbtn" id="skip" onClick ="SkipOption()"><p>Skip</p></div>
+        <!-- <div class="lowbtn" id="next"><p>Next</p></div> -->
     </div>
     </div>
+    <div class="tab">
+        <span id="user-username">Hello {{ request.user.username }}</span>
+    </div>
+    <div class="tab2" id="marks">Score:{{request.user.userdata.score}}</div>
 
 
     <div id="sidebar">
@@ -82,7 +381,28 @@
           </div>
       </div>
 
-    <script src="{%static "js/roulette.js"%}"></script>
-    <script src="{%static "js/questions.js"%}"></script>
+
+     <script src="{%static "js/roulette.js"%}"></script>
+    <script type="text/javascript" src="{%static "js/materialize.js"%}"></script>
+    <script>
+                   var mainx = document.getElementById("mainx");
+window.addEventListener('load',function(){
+  mainx.style.display = "none";
+})
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left',
+      hoverEnabled: false
+    });
+  });
+     </script>
+
+     <div id="logout">
+    <a href="/logout"">Logout</a>
+     </div>
+
+     <script src="{%static "js/ajax.js"%}"></script>
+     <script src="{%static "js/questions.js"%}"></script>
 </body>
 </html>

@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function() {
+ var elems = document.querySelectorAll('.fixed-action-btn');
+ var instances = M.FloatingActionButton.init(elems, {
+	 direction: 'left',
+	 hoverEnabled: false
+ });
+});
 var question1 = document.getElementsByClassName('question1')[0];
 var question2 = document.getElementsByClassName('question2')[0];
 var question3 = document.getElementsByClassName('question3')[0];
@@ -103,3 +110,31 @@ function sendRequest(reality) {
   function stop() {
 	  document.getElementById('roulette').classList.add('second');
   }
+function openNav()
+    {
+       document.getElementById('nav').style.height = "100%";
+    }
+function closeNav()
+    {
+       document.getElementById('nav').style.height = "0%";
+    }
+function toggleFullScreen() {
+   if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+    (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+     if (document.documentElement.requestFullScreen) {
+       document.documentElement.requestFullScreen();
+     } else if (document.documentElement.mozRequestFullScreen) {
+       document.documentElement.mozRequestFullScreen();
+     } else if (document.documentElement.webkitRequestFullScreen) {
+       document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+     }
+   } else {
+     if (document.cancelFullScreen) {
+       document.cancelFullScreen();
+     } else if (document.mozCancelFullScreen) {
+       document.mozCancelFullScreen();
+     } else if (document.webkitCancelFullScreen) {
+       document.webkitCancelFullScreen();
+     }
+   }
+ }

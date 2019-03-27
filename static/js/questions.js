@@ -1,3 +1,4 @@
+
 var counter;
 $(document).ready(function () {
     $(".question").addClass("animated fadeInRightBig");
@@ -45,8 +46,62 @@ $(document).ready(function () {
        document.getElementById('option4').innerHTML = question.option4;
    }
    // console.log(question);
+   function SkipOption() {
+         var data = {
+           "question": counter,
+           "answer": 'NULL ANSWER'
+         };
+         function getCookie(name) {
+           var cookieValue = null;
+             if (document.cookie && document.cookie !== '') {
+                 var cookies = document.cookie.split(';');
+                 for (var i = 0; i < cookies.length; i++) {
+                     var cookie = jQuery.trim(cookies[i]);
+                     // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+         }
+         var csrftoken = getCookie('csrftoken');
+         $.ajaxSetup({
+           beforeSend: function(xhr, settings) {
+               xhr.setRequestHeader("X-CSRFToken", csrftoken);
+           }
+         });
+         if(counter%5==0 && counter!=0)window.location.href='roulette.html';
+         $.ajax({
+           type: "POST",
+           url: "/answer/ajax/post",
+           dataType: "json",
+           data: data,
+           async:false
+         });
+         var req = new XMLHttpRequest();
+         req.open("GET", '/questions/reality/request', false);
+         req.setRequestHeader("Content-Type", "application/json");
+         req.onreadystatechange = function() {
+           if(this.readyState == 4 && this.status ==200) {
+             // if(counter%5 === 0) {
+             //   console.log('Next reality!');
+             //   var url = window.location.href;
+             //   // window.location.href =
+             //
+             question = JSON.parse(this.responseText);
+             // score = JSON.parse(this.responseText.score);
+             // append in html
+             console.log(question);
+             loadQuestion();
+           }
+         }
+         req.send(JSON.stringify(data));
+}
+
   function SubmitOption() {
-      document.getElementById("next").click();
+      document.getElementById("submit").click();
       var ans = document.getElementsByClassName("selected")[0].innerHTML;
       console.log(ans);
       if(!ans) {

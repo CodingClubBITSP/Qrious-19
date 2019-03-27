@@ -1,3 +1,8 @@
+
+
+var k = document.getElementById("marks");
+var usernames = document.getElementById("usernames");
+
 var xhttp = new XMLHttpRequest();
 var answered_questions;
 xhttp.open("GET", "/getInfo", true);
@@ -6,12 +11,14 @@ xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
 
     var json = JSON.parse(this.responseText);
-    console.log(json)
+    console.log(json);
     // get username and score and display it
       answered_questions = json.answered_questions;
       var score = json.score;
       var name = json.username;
-      console.log(score, name);
+      k.innerText = score;
+      usernames.this.innerHTML = "Hello " + name;
+      console.log(score,name);
   }
 };
 
@@ -23,7 +30,7 @@ if(answered_questions === 20) {
   // redirect to roulette
 } else {
   var ques = new XMLHttpRequest();
-  ques.open("GET", "/questions/get/request", true);
+  ques.open("GET", "/questions/reality/request", true);
   ques.setRequestHeader("Content-Type", "application/json");
   ques.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
