@@ -6,6 +6,7 @@ from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Userdata, Question
 import json
+import random
 
 # Create your views here.
 
@@ -39,6 +40,10 @@ def loading(request):
 
 @login_required
 def roulette(request):
+    rand_no = request.user.userdata.reality_played
+    randlist = rand_no.split('-')[:-1]
+    if len(randlist) == 4:
+        return HttpResponseRedirect('/leaderboard.html')
     if request.user.userdata.current_reality != 0:
         url_list = ['mythology', 'magic', 'robotic', 'gaming']
         redirect_url = ''.join(
@@ -77,10 +82,6 @@ def leaderboard_view(request):
     for user in leaderboard:
         user_details = {"name": user.user.username, "score": user.score}
         data.append(user_details)
-
-    obj = Userdata.objects.get(user=request.user)
-    my_details = {"name": obj.user.username, "score": obj.score}
-    data.append(my_details)
     return JsonResponse(data, safe=False)
 
 
@@ -190,10 +191,23 @@ def getquestion(request):
 @csrf_exempt
 def realitychange(request):
     if request.user.is_authenticated():
+        ch = 2
         if request.method == 'POST':
-            request.user.userdata.current_reality = request.POST['reality']
+            print("change reality")
+            list = [1, 2, 3, 4]
+            rand_no = request.user.userdata.reality_played
+            randlist = rand_no.split('-')[:-1]
+            for i in range(len(randlist)):
+                if int(randlist[i]) in list:
+                    list.remove(int(randlist[i]))
+            ch = random.choice(list)
+            request.user.userdata.reality_played += (str(ch)+'-')
+            request.user.userdata.current_reality = ch
             request.user.userdata.save()
-        return HttpResponse('')
+            print(request.user.userdata.reality_played)
+            reality_obj = {'reality': (ch-1)}
+            return JsonResponse(reality_obj)
+    return HttpResponse('')
 
 # 1. powerscheme - 2 ki power, resets on wrong answer
 # 2. all or nothing - all sahi to number warna gaye

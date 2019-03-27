@@ -9,34 +9,39 @@ var question1 = document.getElementsByClassName('question1')[0];
 var question2 = document.getElementsByClassName('question2')[0];
 var question3 = document.getElementsByClassName('question3')[0];
 var question4 = document.getElementsByClassName('question4')[0];
-var question;
+var question,random;
 
 var realities = ["0","1","2","3"];
 function rand(){
 	// var playedReality = user.answered_questions / 5;     //change as per object user
+var choice=Math.floor(Math.random()*2);
 
-		var random = Math.floor(Math.random()*4);
-		// do{
-		// var check = 0;
-		// playedReality.forEach(reality => {
-		// 	if(reality == random)
-		// 		check = 1;
-		// });
-		// if (check)
-		// 	random++;
-		// if(random == 4)
-		// 	random = 0;
-		// } while(check);
-
-	var choice = Math.floor(Math.random()*2);
-	console.log(random);
-	var reality=random+1;
-	$.ajax({
-		type: "POST",
-		url: "/reality/get/request",
-		dataType: "json",
-		data: {"reality":reality}
-	});
+// $.ajax({
+//   type: "POST",
+//   url: "/reality/get/request",
+//   dataType: "json",
+//   data: {"reality":1},
+//   async:false
+// });
+  var req = new XMLHttpRequest();
+  req.open("POST", '/reality/get/request', false);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status ==200) {
+      // if(counter%5 === 0) {
+      //   console.log('Next reality!');
+      //   var url = window.location.href;
+      //   // window.location.href =
+      //
+      random = JSON.parse(this.responseText).reality;
+      // append in html
+      console.log("iwuebiubf");
+    }
+    else{
+      console.log("error");
+    }
+  }
+  req.send();
 	if(random == 0){
 		if(choice == 0){
 			document.getElementById('roulette').style.transform = "rotate(2497.5deg)";
@@ -96,7 +101,7 @@ function sendRequest(reality) {
 		"reality": reality,
 	};
 	var req = new XMLHttpRequest();
-	req.open("GET", '/reality/get/request', true);
+	req.open("GET", '/questions/reality/request', true);
 	req.setRequestHeader("Content-Type", "application/json");
 	req.onreadystatechange = function() {
 		if(this.onreadystatechange == 4 && this.status ==200) {
@@ -104,6 +109,7 @@ function sendRequest(reality) {
 			console.log(question);
 		}
 	}
+  req.send();
   console.log(question);
 }
 

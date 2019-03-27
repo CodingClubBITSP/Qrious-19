@@ -20,6 +20,7 @@ class Userdata(models.Model):
     ques_answered = models.CharField(max_length=450, blank=True, default='')
     last_question = models.IntegerField(default=0)
     current_reality = models.IntegerField(default=0)
+    reality_played = models.CharField(max_length=450, blank=True, default='')
 
     def __str__(self):
         return self.user.username+' Profile'
