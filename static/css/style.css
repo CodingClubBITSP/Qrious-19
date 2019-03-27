@@ -209,18 +209,18 @@ body {
 
 .logo
 {
-    width: 60px;
-    height: 60px;
-    background-image: url("../Images/39666368.jpg");
+    width: 150px;
+    height: 100px;
+    background-image: url("../Images/apogeeLogo.png");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
     position: absolute;
-    left:89% ;
-    top: 2%;
+    left:86% ;
+    top: 0;
     z-index: 500000;
-    opacity: 0.6;
+    opacity: 1;
     transition: all 0s ease-in;
     display:none;
 
@@ -298,10 +298,10 @@ body {
   top: 2%;
   left: 2%;
   transition: all 0.5s ease-in;
-  opacity: 0.6;
-    width: 60px;
-    height: 60px;
-    background-image: url("../Images/41801914_1837561986332182_2516568626039881728_n.jpg");
+  opacity: 1;
+    width: 70px;
+    height: 70px;
+    background-image: url("../Images/39666368.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -500,16 +500,16 @@ body {
   {
     width: 12%;
     height: 7%;
-    background-image: url("../Images/39666368.jpg");
+    background-image: url("../Images/apogeeLogo.png");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
     position: absolute;
-    left:70% ;
+    left: 85vw ;
     top: 2%;
     z-index: 500000;
-    opacity: 0.6;
+    opacity: 1;
     transition: all 0s ease-in;
     display:none;
 
@@ -573,10 +573,10 @@ body {
     top: 2%;
     left: 2%;
     transition: all 0.5s ease-in;
-    opacity: 0.6;
+    opacity: 1;
       width: 12%;
       height: 7%;
-      background-image: url("../Images/41801914_1837561986332182_2516568626039881728_n.jpg");
+      background-image: url("../Images/39666368.jpg");      
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;

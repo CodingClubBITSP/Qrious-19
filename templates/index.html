@@ -3,7 +3,165 @@
 {%load staticfiles%}
 <head>
   <meta charset="UTF-8">
-  <title>QRIOUS'19</title>
+	<title>QRIOUS'19</title>
+	<style>
+		.mainx {
+        position: absolute;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 2000000000;
+background: #090707;
+}
+
+.dank-ass-loader {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.dank-ass-loader .rowx {
+display: flex;
+}
+
+.arrow {
+width: 0;
+height: 0;
+margin: 0 -6px;
+border-left: 12px solid transparent;
+border-right: 12px solid transparent;
+border-bottom: 21.6px solid  rgba(75,23,111);
+-webkit-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+-webkit-filter: drop-shadow(0 0 18px  rgb(192, 126, 240));
+    filter: drop-shadow(0 0 18px  rgba(75,23,111));
+}
+.arrow.down {
+-webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.arrow.outer-1 {
+-webkit-animation-delay: -0.0555555556s;
+    animation-delay: -0.0555555556s;
+}
+.arrow.outer-2 {
+-webkit-animation-delay: -0.1111111111s;
+    animation-delay: -0.1111111111s;
+}
+.arrow.outer-3 {
+-webkit-animation-delay: -0.1666666667s;
+    animation-delay: -0.1666666667s;
+}
+.arrow.outer-4 {
+-webkit-animation-delay: -0.2222222222s;
+    animation-delay: -0.2222222222s;
+}
+.arrow.outer-5 {
+-webkit-animation-delay: -0.2777777778s;
+    animation-delay: -0.2777777778s;
+}
+.arrow.outer-6 {
+-webkit-animation-delay: -0.3333333333s;
+    animation-delay: -0.3333333333s;
+}
+.arrow.outer-7 {
+-webkit-animation-delay: -0.3888888889s;
+    animation-delay: -0.3888888889s;
+}
+.arrow.outer-8 {
+-webkit-animation-delay: -0.4444444444s;
+    animation-delay: -0.4444444444s;
+}
+.arrow.outer-9 {
+-webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.arrow.outer-10 {
+-webkit-animation-delay: -0.5555555556s;
+    animation-delay: -0.5555555556s;
+}
+.arrow.outer-11 {
+-webkit-animation-delay: -0.6111111111s;
+    animation-delay: -0.6111111111s;
+}
+.arrow.outer-12 {
+-webkit-animation-delay: -0.6666666667s;
+    animation-delay: -0.6666666667s;
+}
+.arrow.outer-13 {
+-webkit-animation-delay: -0.7222222222s;
+    animation-delay: -0.7222222222s;
+}
+.arrow.outer-14 {
+-webkit-animation-delay: -0.7777777778s;
+    animation-delay: -0.7777777778s;
+}
+.arrow.outer-15 {
+-webkit-animation-delay: -0.8333333333s;
+    animation-delay: -0.8333333333s;
+}
+.arrow.outer-16 {
+-webkit-animation-delay: -0.8888888889s;
+    animation-delay: -0.8888888889s;
+}
+.arrow.outer-17 {
+-webkit-animation-delay: -0.9444444444s;
+    animation-delay: -0.9444444444s;
+}
+.arrow.outer-18 {
+-webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+.arrow.inner-1 {
+-webkit-animation-delay: -0.1666666667s;
+    animation-delay: -0.1666666667s;
+}
+.arrow.inner-2 {
+-webkit-animation-delay: -0.3333333333s;
+    animation-delay: -0.3333333333s;
+}
+.arrow.inner-3 {
+-webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.arrow.inner-4 {
+-webkit-animation-delay: -0.6666666667s;
+    animation-delay: -0.6666666667s;
+}
+.arrow.inner-5 {
+-webkit-animation-delay: -0.8333333333s;
+    animation-delay: -0.8333333333s;
+}
+.arrow.inner-6 {
+-webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+
+@-webkit-keyframes blink {
+0% {
+opacity: 0.1;
+}
+30% {
+opacity: 1;
+}
+100% {
+opacity: 0.1;
+}
+}
+
+@keyframes blink {
+0% {
+opacity: 0.1;
+}
+30% {
+opacity: 1;
+}
+100% {
+opacity: 0.1;
+}
+}
+	</style>
   <!-- <link rel="stylesheet" href="style.css"> -->
   <!-- <link rel="stylesheet" href="css/fontawesome.css" >  -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +179,48 @@
 </head>
 
 <body>
+	  <main class="mainx" id="mainx">
+        <div class="dank-ass-loader">
+           <div class="rowx">
+              <div class="arrow up outer outer-18"></div>
+              <div class="arrow down outer outer-17"></div>
+              <div class="arrow up outer outer-16"></div>
+              <div class="arrow down outer outer-15"></div>
+              <div class="arrow up outer outer-14"></div>
+           </div>
+           <div class="rowx">
+              <div class="arrow up outer outer-1"></div>
+              <div class="arrow down outer outer-2"></div>
+              <div class="arrow up inner inner-6"></div>
+              <div class="arrow down inner inner-5"></div>
+              <div class="arrow up inner inner-4"></div>
+              <div class="arrow down outer outer-13"></div>
+              <div class="arrow up outer outer-12"></div>
+           </div>
+           <div class="rowx">
+              <div class="arrow down outer outer-3"></div>
+              <div class="arrow up outer outer-4"></div>
+              <div class="arrow down inner inner-1"></div>
+              <div class="arrow up inner inner-2"></div>
+              <div class="arrow down inner inner-3"></div>
+              <div class="arrow up outer outer-11"></div>
+              <div class="arrow down outer outer-10"></div>
+           </div>
+           <div class="rowx">
+              <div class="arrow down outer outer-5"></div>
+              <div class="arrow up outer outer-6"></div>
+              <div class="arrow down outer outer-7"></div>
+              <div class="arrow up outer outer-8"></div>
+              <div class="arrow down outer outer-9"></div>
+           </div>
+        </div>
+     </main>
 		<div class="logo1"></div>
 		<div class="logo"></div>
-		        <div class="full">
+		        <!-- <div class="full">
 				<a href="#" class="fsbtn open"  onclick="toggleFullScreen()"><i class="fas fa-arrows-alt"></i></a>
 				<a href="#" class="fsbtn close" onclick="toggleFullScreen()"><i class="fas fa-compress-arrows-alt"></i></i></a>
-			</div>
+			</div> -->
 	<div class="text-container">
 		<h1>Qrious</h1>
 		<p>Dwelve into your Imagination</p>
@@ -684,6 +878,11 @@
 	<!-- <script>startApp();</script> -->
 
 <script>
+ var mainx = document.getElementById("mainx");
+window.addEventListener('load',function(){
+  mainx.style.display = "none";
+})
+
         window.addEventListener('resize', function(){
              if(screen.width === window.innerWidth){
                 $('.final').toggleClass('active');
