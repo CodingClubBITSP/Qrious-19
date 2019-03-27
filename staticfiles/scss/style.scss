@@ -1,0 +1,23 @@
+body {
+  overflow: hidden;
+  //background: #000; //#15051C;
+}
+
+.loaded .bg { opacity: 1; }
+
+.bg {
+  width: 100%;
+  height: 100%;
+  
+  opacity: 0;
+  will-change: opacity;
+  transition: 1s opacity ease-out;
+  
+  polygon {
+    opacity: 0;
+
+    transform-origin: center center;
+   // transition: 0.25s fill linear,
+   //             0.25s stroke linear;
+  }
+}

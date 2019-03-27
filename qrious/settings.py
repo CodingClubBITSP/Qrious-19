@@ -124,7 +124,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 SITE_ID = 2
 
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
 
 LANGUAGE_CODE = 'en-us'
 
@@ -138,7 +138,7 @@ USE_TZ = True
 
 
 LOGIN_REDIRECT_URL = '/roulette'
-
+LOGIN_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)

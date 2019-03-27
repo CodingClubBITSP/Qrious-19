@@ -1,3 +1,4 @@
+
 var counter;
 $(document).ready(function () {
     $(".question").addClass("animated fadeInRightBig");
@@ -43,15 +44,74 @@ $(document).ready(function () {
        document.getElementById('option2').innerHTML = question.option2;
        document.getElementById('option3').innerHTML = question.option3;
        document.getElementById('option4').innerHTML = question.option4;
+       M.Toast.dismissAll();
    }
    // console.log(question);
+   function SkipOption() {
+         var data = {
+           "question": counter,
+           "answer": 'NULL ANSWER'
+         };
+         function getCookie(name) {
+           var cookieValue = null;
+             if (document.cookie && document.cookie !== '') {
+                 var cookies = document.cookie.split(';');
+                 for (var i = 0; i < cookies.length; i++) {
+                     var cookie = jQuery.trim(cookies[i]);
+                     // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+         }
+         var csrftoken = getCookie('csrftoken');
+         $.ajaxSetup({
+           beforeSend: function(xhr, settings) {
+               xhr.setRequestHeader("X-CSRFToken", csrftoken);
+           }
+         });
+         if(counter%5==0 && counter!=0)window.location.href='roulette.html';
+         $.ajax({
+           type: "POST",
+           url: "/answer/ajax/post",
+           dataType: "json",
+           data: data,
+           async:false
+         });
+         var req = new XMLHttpRequest();
+         req.open("GET", '/questions/reality/request', false);
+         req.setRequestHeader("Content-Type", "application/json");
+         req.onreadystatechange = function() {
+           if(this.readyState == 4 && this.status ==200) {
+             // if(counter%5 === 0) {
+             //   console.log('Next reality!');
+             //   var url = window.location.href;
+             //   // window.location.href =
+             //
+             question = JSON.parse(this.responseText);
+             score = JSON.parse(question.score);
+             // append in html
+             console.log(question);
+             document.getElementById("marks2").innerHTML="Score :"+score;
+             loadQuestion();
+           }
+         }
+         req.send(JSON.stringify(data));
+}
+
   function SubmitOption() {
-      document.getElementById("next").click();
+
+      // document.getElementById("submit").click();
+      if(!document.getElementsByClassName("selected")[0]) {
+        M.toast({html: 'Please select an option!'});
+      } else {
+          M.toast({html: 'Loading question!'})
+      }
       var ans = document.getElementsByClassName("selected")[0].innerHTML;
       console.log(ans);
-      if(!ans) {
-        document.getElementsByClassName('alert')[0].style.animation = 'showAlert 2s ease-in-out';
-      }
 
       var data = {
         "question": counter,
@@ -79,6 +139,7 @@ $(document).ready(function () {
             xhr.setRequestHeader("X-CSRFToken", csrftoken);
         }
       });
+      if(counter%5==0 && counter!=0)window.location.href='roulette.html';
       $.ajax({
         type: "POST",
         url: "/answer/ajax/post",
@@ -97,9 +158,11 @@ $(document).ready(function () {
           //   // window.location.href =
           //
           question = JSON.parse(this.responseText);
-          // score = JSON.parse(this.responseText.score);
+          score = JSON.parse(question.score);
+          console.log(score);
           // append in html
           console.log(question);
+          document.getElementById("marks2").innerHTML="Score :"+score;
           loadQuestion();
         }
       }

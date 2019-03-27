@@ -1,0 +1,441 @@
+
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+ 
+}
+body {
+  overflow:hidden;
+  background-color: #173F5F;
+}
+
+
+#sidebar {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:200px;
+  height:100vh;
+  
+  text-align:center;
+  transform-origin:left;
+  transform:perspective(1200px) rotateY(90deg);
+  transition:all 400ms ease;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  
+}
+
+#sidebar ul li  {
+color:#ccc;
+  font-size:20px;
+  width:100%;
+  height:50px;
+  text-decoration: none;
+  line-height:50px;
+  list-style: none;
+}
+#sidebar ul li a {
+  color:#ccc;
+  font-size:20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+#sidebar.active {
+  transform:perspective(1200px) rotateY(0deg);
+}
+
+
+
+#toggle-btn {
+  position:absolute;
+  left:30px;
+  top:20px;
+  transition:left 200ms linear 0ms,transform 300ms ease 100ms;
+}
+#toggle-btn.active {
+  left:230px;
+  transform:rotate(360deg);
+}
+#toggle-btn span {
+  display: none;
+  transition:transform 300ms ease 200ms;
+}
+#toggle-btn.active span:nth-child(1) {
+  top:10px;
+  transform:rotate(45deg);
+}
+#toggle-btn.active span:nth-child(2) {
+  opacity:0;
+}
+#toggle-btn.active span:nth-child(3) {
+  top:-10px;
+  transform:rotate(-45deg);
+}
+.humble
+{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /*border: 1px solid black;*/
+
+}
+.good
+{
+	width:200px ;
+	height: 80px;
+  /*border:1px solid black;*/
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+	
+}
+
+.good a
+{
+   position: relative;
+	top: 3px;
+	margin: 20px;
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+	background-color: rgba(0,0,0,0.4);
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 50%;
+  /*transform: rotate(45deg);*/
+
+}
+
+.good .open
+{
+   position: relative;
+  top: 1px;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+
+}
+
+.final
+{
+  width: 100px;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /*border: 1px solid black;*/
+}
+
+.final a
+{
+  position: relative;
+  top: 1px;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 50%;
+
+}
+
+.final .open
+{
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 17px;
+  padding-right: 17px;
+  transform: rotate(45deg);
+}
+
+.close
+{
+  display: none;
+
+}
+
+.close.active
+{
+  display: block;
+} 
+
+.close.active
+{
+  display: block;
+  transform: rotate(0deg);
+
+} 
+
+.final.active .open
+{
+  display: none;
+}
+
+.good .openBtn
+{
+	position: relative
+	;
+  background-color: rgba(0,0,0,0.4);
+	margin: 20px;
+	text-decoration: none;
+	font-size: 24px;
+	color: white;
+	
+	padding-top: 13px;
+	padding-bottom: 13px;
+	padding-left: 25px;
+	padding-right: 25px;
+	border-radius: 50%;
+}
+
+.bits
+{   
+	position: absolute;
+	bottom:  10px;
+	right: 10px;
+	width: 100%;
+	height: 80px;
+	display:  flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+ }
+
+
+
+.logo
+{   
+    width: 60px;
+    height: 60px;
+    background-image: url(39666368.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    position: relative;
+    left: -5px;
+    
+}
+
+.logo1
+{
+    width: 60px;
+    height: 60px;
+    background-image: url(41801914_1837561986332182_2516568626039881728_n.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+ }
+.overlay
+{       
+	    font-family: sans-serif;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+		width: 100%;
+		height: 0%;
+		background: rgba(0,0,0,0.9);
+		overflow: hidden;
+		z-index: 5;
+		transition: 0.5s all;
+}
+
+.overlay__content
+{
+	position: relative;
+	top: 5%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.overlay a
+{
+	color: #eee;
+	font-size: 30px;
+	text-decoration: none;
+	
+}
+
+.overlay .closeBtn
+{
+   position: absolute;
+   top: 20px;
+   right: 50px;
+   font-size: 50px;
+	
+}
+
+.overlay .closeBtn:hover
+{
+   color: white;
+   transition: 0.2s all ease-in;
+	
+}
+
+.overlay__content a
+{
+	color: #eee;
+	font-size: 50px;
+	text-decoration: none;
+  font-weight: bold;
+font-family: 'Baloo Thambi', cursive;
+
+}
+
+.overlay__content p
+{
+	color: #eee;
+	font-size: 30px;
+	text-decoration: none;
+	width: 80%;
+	margin: 20px auto;
+  font-family: 'ZCOOL KuaiLe', cursive;
+
+}
+
+@media screen and (max-width: 700px)
+{
+    .logo
+{   
+   
+    width: 40px;
+    height: 40px;
+    
+}
+
+.logo1
+{
+    width: 40px;
+    height: 40px;
+    
+ }
+
+.overlay__content a
+{
+	color: #eee;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+.overlay__content p
+{
+	color: #eee;
+	font-size: 20px;
+	text-decoration: none;
+	width: 80%;
+	margin: 20px auto;
+}
+
+
+
+#toggle-btn span {
+  position:relative;
+  top:0px;
+  display:block;
+  background:#1a1a1a;
+  width:30px;
+  height:5px;
+  margin:5px 0px;
+  cursor:pointer;
+  border-radius: 40px;
+  transition:transform 300ms ease 200ms;
+}
+
+#sidebar {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:200px;
+  height:100vh;
+  background-color: rgba(0,0,0,0.4);
+  text-align:center;
+  transform-origin:left;
+  transform:perspective(1200px) rotateY(90deg);
+  transition:all 400ms ease;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.good .openBtn
+{
+  display: none;
+}
+
+.good .trop
+{
+  display: none;
+}
+
+.close
+{
+  display: none;
+}
+
+.close.active
+{
+  display: block;
+} 
+
+.good.active .open
+{
+  display: none;
+}
+
+.open
+{
+  display: block;
+}
+
+.good .open
+{
+  font-size: 15px;
+}
+
+
+.good .close
+{
+  font-size: 15px;
+}
+
+
+}
+
+/*/@media (max-height:  700px)
+{
+  .final
+  {
+    position: absolute;
+    top: 10px;
+  }
+}

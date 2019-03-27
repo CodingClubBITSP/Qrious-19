@@ -5,6 +5,39 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
+    <style>
+    .backbutton
+    {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content:  center;
+      align-items: center;
+      position: absolute;
+      top: 2vh;
+      left: 90vw;
+    }
+    @media (max-width:850px)
+    {
+      .heading
+      {
+        font-size: 20px;
+      }
+
+      .backbutton
+      {
+        left: 85vw;
+
+      }
+      .backbutton  i
+      {
+        font-size: 30px;
+      }
+    }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="{%static "css/leaderboard.css"%}" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -24,19 +57,34 @@
    <!-- <link rel="stylesheet" href="loder.css"> -->
    <link rel="stylesheet" href="{%static "fontawesome/css/all.css"%}">
    <script src="{%static "js/jquery.min.js"%}"></script>
+   <link href="{%static "css/materialize.css"%}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
-    <div id="leaderboard" class="container"></div>
-    <div class="humble">
-            <div class="good">
-            <a href="#" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-            </div>
-            <div class="final">
-            <a href="#" class="open"  onclick="toggleFullScreen()"><i class="fas fa-arrows-alt"></i></a>
-            <a href="#" class="close" onclick="toggleFullScreen()"><i class="fas fa-compress-arrows-alt"></i></i></a>
-            </div>
-            </div>
+<div id="leaderboard" class="lead"></div>
+    <!-- <div class="fixed-action-btn click-to-toggle" style="position:absolute;top:10px;z-index: 2;">
+            <a class="btn-floating btn-large" style="background-color:rgba(0,0,0,0.7);">
+                <i class="large material-icons" style="font-size:40px;">add_circle_outline</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" onclick="goBack()"><i class="material-icons">chevron_left</i></a></li>
+                <li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" onclick="openNav()"><i class="material-icons">info</i></a></li>
+                <li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" onclick="toggleFullScreen()"><i class="material-icons">fullscreen</i></a></li>
+                <li><a class="btn-floating" style="background-color:rgba(0,0,0,0.7);" id="marks"></a></li>
+            </ul>
+        </div> -->
+        <div class="backbutton" onclick="goBack()"><i class="fas fa-hand-point-left" style="font-size:40px;color:white;"></i></div>
+        <script type="text/javascript" src="{%static "js/materialize.js"%}"></script>
+        <script type="text/javascript" src="{%static "js/ajax.js"%}"></script>
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left',
+      hoverEnabled: false
+    });
+  });
         function toggleFullScreen() {
         if ((document.fullScreenElement && document.fullScreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
             if (document.documentElement.requestFullScreen) {
@@ -73,7 +121,6 @@ function goBack()
     window.history.back();
 }
 
-    </script>
-</body>
+    </script></body>
 <script src="{%static "js/leaderboard.js"%}"></script>
 </html>

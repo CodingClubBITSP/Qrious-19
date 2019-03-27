@@ -165,7 +165,7 @@ body {
    /* padding:0px 8px ;
    border-radius: 50%;
    margin: auto;
-} */ 
+} */
 
 .fsbtn
  {
@@ -185,7 +185,7 @@ body {
    padding-bottom: 5px;
    padding-left: 2px;
    padding-right: 4px;
-   
+
    border-radius: 50%;
    margin: auto;
    text-align: center;
@@ -209,18 +209,18 @@ body {
 
 .logo
 {
-    width: 60px;
-    height: 60px;
-    background-image: url("../Images/39666368.jpg");
+    width: 250px;
+    height: 300px;
+    /* background-image: url("../Images/apogeeLogo.png");
     background-position: center center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     border-radius: 10px;
     position: absolute;
-    left:89% ;
-    top: 2%;
+    left:86% ;
+    top: 0;
     z-index: 500000;
-    opacity: 0.6;
+    opacity: 1;
     transition: all 0s ease-in;
     display:none;
 
@@ -253,7 +253,7 @@ body {
   padding-bottom: 10px;
   padding-left: 0px;
   padding-right: 0px;
-  
+
   z-index: 500000;
   transform: rotate(0);
 
@@ -298,13 +298,13 @@ body {
   top: 2%;
   left: 2%;
   transition: all 0.5s ease-in;
-  opacity: 0.6;
-    width: 60px;
-    height: 60px;
-    background-image: url("../Images/41801914_1837561986332182_2516568626039881728_n.jpg");
+  opacity: 1;
+    width: 130px;
+    height: 70px;
+    /* background-image: url("../Images/LOGO_CC.png");
     background-position: center center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     border-radius: 10px;
     display: none;
  }
@@ -498,18 +498,18 @@ body {
 
   .logo
   {
-    width: 12%;
-    height: 7%;
-    background-image: url("../Images/39666368.jpg");
+    width: 200px;
+    height: 250px;
+    /* background-image: url("../Images/apogeeLogo.png");
     background-position: center center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     border-radius: 10px;
     position: absolute;
-    left:70% ;
+    left: 85vw ;
     top: 2%;
     z-index: 500000;
-    opacity: 0.6;
+    opacity: 1;
     transition: all 0s ease-in;
     display:none;
 
@@ -573,15 +573,29 @@ body {
     top: 2%;
     left: 2%;
     transition: all 0.5s ease-in;
-    opacity: 0.6;
-      width: 12%;
-      height: 7%;
-      background-image: url("../Images/41801914_1837561986332182_2516568626039881728_n.jpg");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+    opacity: 1;
+      width: 100px;
+      height: 70px;
       border-radius: 10px;
       display: none;
+   }
+   .logo
+   {
+     width: 150px;
+     height: 200px;
+     /* background-image: url("../Images/apogeeLogo.png");
+     background-position: center center;
+     background-size: cover;
+     background-repeat: no-repeat; */
+     border-radius: 10px;
+     position: absolute;
+     left: 75vw ;
+     top: 2%;
+     z-index: 500000;
+     opacity: 1;
+     transition: all 0s ease-in;
+     display:none;
+
    }
    .fsbtn
    {
@@ -605,7 +619,7 @@ body {
      border-radius: 50%;
      margin: auto;
   }
-  
+
 
 
 

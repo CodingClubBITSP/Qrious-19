@@ -3,12 +3,15 @@ from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirec
 from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Userdata, Question
 import json
+import random
 
 # Create your views here.
 
 
+@login_required
 def userdat(request):
     usrdata = {}
     if request.user.is_authenticated():
@@ -30,18 +33,23 @@ def home(request):
     return render(request, 'index.html')
 
 
+@login_required
 def loading(request):
     return render(request, 'loader.html')
 
 
+@login_required
 def roulette(request):
-    if request.user.userdata.current_reality == 0:
-        return render(request, 'roulette.html')
-    else:
+    rand_no = request.user.userdata.reality_played
+    randlist = rand_no.split('-')[:-1]
+    if len(randlist) == 4:
+        return HttpResponseRedirect('/leaderboard.html')
+    if request.user.userdata.current_reality != 0:
         url_list = ['mythology', 'magic', 'robotic', 'gaming']
         redirect_url = ''.join(
             ["/roulette/", url_list[request.user.userdata.current_reality-1], "des.html"])
         return redirect(redirect_url)
+    return render(request, 'roulette.html')
 
 
 def l_out(request):
@@ -49,27 +57,35 @@ def l_out(request):
     return redirect('/')
 
 
+@login_required
 def intro(request, filename):
+    if filename == 'leaderboard.html':
+        return render(request, 'leaderboard.html')
+    if request.user.userdata.current_reality == 0:
+        return HttpResponseRedirect('/roulette')
     return render(request, filename)
 
 
+@login_required
 def quiz(request, filename, basename):
+    if basename == 'leaderboard.html':
+        return render(request, 'leaderboard.html')
+    if request.user.userdata.current_reality == 0:
+        return HttpResponseRedirect('/roulette')
     return render(request, filename)
 
 
+@login_required
 def leaderboard_view(request):
     data = []
     leaderboard = Userdata.objects.order_by('score').reverse()[:10]
     for user in leaderboard:
         user_details = {"name": user.user.username, "score": user.score}
         data.append(user_details)
-
-    obj = Userdata.objects.get(user=request.user)
-    my_details = {"name": obj.user.username, "score": obj.score}
-    data.append(my_details)
     return JsonResponse(data, safe=False)
 
 
+@login_required
 @csrf_exempt
 def postanswer(request):
     if request.method == 'POST':
@@ -92,46 +108,58 @@ def postanswer(request):
         selected_choice = request.POST['answer']
         print(question)
         print(selected_choice)
-        if question.reality_type == 'MAGIC':
-            if selected_choice == question.correct_choice:
-                power = request.user.userdata.magicmarks
-                request.user.userdata.score += 2 ** power
-                request.user.userdata.magicmarks += 1
-            else:
-                request.user.userdata.magicmarks = 0
-        elif question.reality_type == 'ROBOTICS':
-            if selected_choice == question.correct_choice:
-                simcorrect = request.user.userdata.roboticsmarks
-                if simcorrect < 5:
-                    request.user.userdata.roboticsmarks += 1
+        if selected_choice == 'NULL ANSWER':
+            pass
+        else:
+            if question.reality_type == 'MAGIC':
+                if selected_choice == question.correct_choice:
+                    power = request.user.userdata.magicmarks
+                    request.user.userdata.score += 2 ** power
+                    request.user.userdata.magicmarks += 1
+                    request.user.userdata.save()
                 else:
-                    request.user.userdata.score += 25
-            else:
-                request.user.userdata.roboticsmarks = 0
-        elif question.reality_type == 'GAMING':
-            if selected_choice == question.correct_choice:
-                request.user.userdata.score += 4
-            else:
-                request.user.userdata.score -= 1
-        elif question.reality_type == 'MYTHOLOGY':
-            if selected_choice == question.correct_choice:
-                correct = request.user.userdata.mythologymarks
-                if correct == 1:
-                    request.user.userdata.score += 2
-                elif correct == 2:
-                    request.user.userdata.score += 3
-                elif correct == 3:
-                    request.user.userdata.score += 5
-                elif correct == 4:
-                    request.user.userdata.score += 8
-                elif correct == 5:
-                    request.user.userdata.score += 13
-                correct += 1
-        request.user.userdata.save()
+                    request.user.userdata.magicmarks = 0
+                    request.user.userdata.save()
+            elif question.reality_type == 'ROBOTICS':
+                if selected_choice == question.correct_choice:
+                    simcorrect = request.user.userdata.roboticsmarks
+                    if simcorrect < 5:
+                        request.user.userdata.roboticsmarks += 1
+                        request.user.userdata.save()
+                    else:
+                        request.user.userdata.score += 25
+                        request.user.userdata.save()
+                else:
+                    request.user.userdata.roboticsmarks = 0
+                    request.user.userdata.save()
+            elif question.reality_type == 'GAMING':
+                if selected_choice == question.correct_choice:
+                    request.user.userdata.score += 4
+                    request.user.userdata.save()
+                else:
+                    request.user.userdata.score -= 1
+                    request.user.userdata.save()
+            elif question.reality_type == 'MYTHOLOGY':
+                if selected_choice == question.correct_choice:
+                    request.user.userdata.mythologymarks += 1
+                    request.user.userdata.save()
+                    correct = request.user.userdata.mythologymarks
+                    if correct == 1:
+                        request.user.userdata.score += 2
+                    elif correct == 2:
+                        request.user.userdata.score += 3
+                    elif correct == 3:
+                        request.user.userdata.score += 5
+                    elif correct == 4:
+                        request.user.userdata.score += 8
+                    elif correct == 5:
+                        request.user.userdata.score += 13
+            request.user.userdata.save()
         print("score=", request.user.userdata.score)
         return HttpResponse('')
 
 
+@login_required
 @csrf_exempt
 def getquestion(request):
     if request.user.is_authenticated():
@@ -159,13 +187,27 @@ def getquestion(request):
         return JsonResponse(question_obj)
 
 
+@login_required
 @csrf_exempt
 def realitychange(request):
     if request.user.is_authenticated():
+        ch = 2
         if request.method == 'POST':
-            request.user.userdata.current_reality = request.POST['reality']
+            print("change reality")
+            list = [1, 2, 3, 4]
+            rand_no = request.user.userdata.reality_played
+            randlist = rand_no.split('-')[:-1]
+            for i in range(len(randlist)):
+                if int(randlist[i]) in list:
+                    list.remove(int(randlist[i]))
+            ch = random.choice(list)
+            request.user.userdata.reality_played += (str(ch)+'-')
+            request.user.userdata.current_reality = ch
             request.user.userdata.save()
-        return HttpResponse('')
+            print(request.user.userdata.reality_played)
+            reality_obj = {'reality': (ch-1)}
+            return JsonResponse(reality_obj)
+    return HttpResponse('')
 
 # 1. powerscheme - 2 ki power, resets on wrong answer
 # 2. all or nothing - all sahi to number warna gaye
